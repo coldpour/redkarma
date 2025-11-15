@@ -9,7 +9,7 @@ body {
     font-family: 'Helvetica Neue', Arial, sans-serif;
     line-height: 1.6;
     color: #333;
-    background-color: #0a0a0a;
+    background: black;
 }
 
 .container {
@@ -73,22 +73,10 @@ body {
     border: none;
 }
 
-.hero-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 15%;
-    background: rgba(0, 0, 0, 0.5);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
 /* Shows Section */
 .shows {
     padding: 80px 0;
-    background: linear-gradient(180deg, #0a0a0a 0%, #1a1a1a 100%);
+    background: linear-gradient(180deg, #000 0%, #1a1a1a 100%);
 }
 
 .shows h2 {
@@ -178,6 +166,41 @@ body {
     background: #ff1744;
     box-shadow: 0 0 20px rgba(220, 20, 60, 0.6);
     transform: scale(1.05);
+}
+
+.merch {
+    padding: 80px 0;
+    background: #1a1a1a;
+}
+
+.merch h2 {
+    color: #fff;
+    font-size: clamp(2rem, 5vw, 3rem);
+    text-align: center;
+    margin-bottom: 20px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.merch-items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.merch-item {
+    margin: 0 auto;
+}
+
+.merch-text {
+    color: #999;
+    text-align: center;
+    font-size: 1.1rem;
+    margin-bottom: 60px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* Subscribe Section */
