@@ -1,0 +1,369 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #0a0a0a;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.hero-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-content {
+    text-align: center;
+    color: #fff;
+    z-index: 2;
+}
+
+.band-name {
+    font-size: clamp(3rem, 10vw, 8rem);
+    font-weight: 900;
+    letter-spacing: 0.2em;
+    margin-bottom: 1rem;
+    text-shadow: 0 0 20px rgba(220, 20, 60, 0.8),
+                 0 0 40px rgba(220, 20, 60, 0.5);
+    color: #fff;
+}
+
+.tagline {
+    font-size: clamp(1rem, 3vw, 1.5rem);
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    opacity: 0.9;
+}
+
+/* Shows Section */
+.shows {
+    padding: 80px 0;
+    background: linear-gradient(180deg, #0a0a0a 0%, #1a1a1a 100%);
+}
+
+.shows h2 {
+    color: #fff;
+    font-size: clamp(2rem, 5vw, 3rem);
+    text-align: center;
+    margin-bottom: 60px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.shows-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.show-item {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(220, 20, 60, 0.3);
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    transition: all 0.3s ease;
+    border-radius: 8px;
+}
+
+.show-item:hover {
+    background: rgba(220, 20, 60, 0.1);
+    border-color: rgba(220, 20, 60, 0.6);
+    transform: translateX(10px);
+}
+
+.show-date {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 80px;
+    padding: 15px;
+    background: rgba(220, 20, 60, 0.2);
+    border-radius: 8px;
+}
+
+.show-date .month {
+    color: #dc143c;
+    font-weight: 700;
+    font-size: 1.2rem;
+    letter-spacing: 0.1em;
+}
+
+.show-date .day {
+    color: #fff;
+    font-size: 2.5rem;
+    font-weight: 900;
+}
+
+.show-details {
+    flex: 1;
+}
+
+.show-details .venue {
+    color: #fff;
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+}
+
+.show-details .location {
+    color: #999;
+    font-size: 1.1rem;
+}
+
+.show-action .btn {
+    padding: 12px 30px;
+    background: #dc143c;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.show-action .btn:hover {
+    background: #ff1744;
+    box-shadow: 0 0 20px rgba(220, 20, 60, 0.6);
+    transform: scale(1.05);
+}
+
+/* Subscribe Section */
+.subscribe {
+    padding: 80px 0;
+    background: #1a1a1a;
+}
+
+.subscribe h2 {
+    color: #fff;
+    font-size: clamp(2rem, 5vw, 3rem);
+    text-align: center;
+    margin-bottom: 20px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.subscribe-text {
+    color: #999;
+    text-align: center;
+    font-size: 1.1rem;
+    margin-bottom: 40px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.email-form {
+    display: flex;
+    max-width: 600px;
+    margin: 0 auto;
+    gap: 10px;
+}
+
+.email-form input[type="email"] {
+    flex: 1;
+    padding: 15px 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(220, 20, 60, 0.3);
+    border-radius: 30px;
+    color: #fff;
+    font-size: 1rem;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.email-form input[type="email"]::placeholder {
+    color: #666;
+}
+
+.email-form input[type="email"]:focus {
+    border-color: #dc143c;
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.email-form .btn-submit {
+    padding: 15px 40px;
+    background: #dc143c;
+    color: #fff;
+    border: none;
+    border-radius: 30px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.email-form .btn-submit:hover {
+    background: #ff1744;
+    box-shadow: 0 0 20px rgba(220, 20, 60, 0.6);
+    transform: scale(1.05);
+}
+
+/* Social Section */
+.social {
+    padding: 60px 0;
+    background: linear-gradient(180deg, #1a1a1a 0%, #0a0a0a 100%);
+}
+
+.social h2 {
+    color: #fff;
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    text-align: center;
+    margin-bottom: 40px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(220, 20, 60, 0.3);
+    border-radius: 50%;
+    color: #fff;
+    transition: all 0.3s ease;
+}
+
+.social-link:hover {
+    background: rgba(220, 20, 60, 0.2);
+    border-color: #dc143c;
+    transform: translateY(-5px) scale(1.1);
+    box-shadow: 0 10px 30px rgba(220, 20, 60, 0.4);
+}
+
+.social-link svg {
+    width: 28px;
+    height: 28px;
+}
+
+/* Footer */
+.footer {
+    padding: 30px 0;
+    background: #0a0a0a;
+    border-top: 1px solid rgba(220, 20, 60, 0.2);
+}
+
+.footer p {
+    color: #666;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .show-item {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+
+    .show-date {
+        width: 100%;
+        max-width: 120px;
+    }
+
+    .show-details {
+        width: 100%;
+    }
+
+    .show-action {
+        width: 100%;
+    }
+
+    .show-action .btn {
+        display: block;
+        width: 100%;
+    }
+
+    .email-form {
+        flex-direction: column;
+        padding: 0 20px;
+    }
+
+    .email-form .btn-submit {
+        width: 100%;
+    }
+
+    .social-links {
+        gap: 20px;
+    }
+
+    .social-link {
+        width: 50px;
+        height: 50px;
+    }
+
+    .social-link svg {
+        width: 24px;
+        height: 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    .shows, .subscribe, .social {
+        padding: 50px 0;
+    }
+
+    .show-item {
+        padding: 20px;
+    }
+
+    .band-name {
+        letter-spacing: 0.1em;
+    }
+
+    .tagline {
+        letter-spacing: 0.2em;
+    }
+}
