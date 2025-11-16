@@ -54,7 +54,7 @@ body {
 .band-name {
     position: relative;
     z-index: 1;
-    font-size: clamp(7rem, 10vw, 8rem);
+    font-size: clamp(6rem, 10vw, 8rem);
     line-height: 0.8;
     letter-spacing: 0.1em;
     color: white;
@@ -414,10 +414,8 @@ body {
     }
 
     .band-name {
-        letter-spacing: 0.1em;
     }
 
     .tagline {
-        letter-spacing: 0.2em;
     }
 }
