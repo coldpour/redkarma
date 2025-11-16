@@ -24,35 +24,27 @@ body {
 }
 
 .title {
-    font-family: tungsten, 'Helvetica Neue', Arial, sans-serif;
-    height: clamp(10rem, 28vw, 18rem);
-    z-index: 1;
-    position: relative;
-    background: black;
-}
-
-.title-content {
+    padding: 40px 0 20px 0;
     text-align: center;
-    color: #fff;
-    z-index: 2;
-    white-space: nowrap;
-    min-width: 333px;
+    font-family: tungsten, 'Helvetica Neue', Arial, sans-serif;
+    background: url('glitter.jpg') repeat;
 }
 
 .band-name {
     font-size: clamp(7rem, 10vw, 8rem);
+    line-height: 0.8;
     letter-spacing: 0.1em;
-    color: rgb(216, 0, 0);
-    text-shadow:
-        3px 3px 0 white,
-        0 0 60px white;
+    color: white;
+    text-shadow: 5px 5px 0 black;
 }
 
 .tagline {
-    font-size: clamp(1rem, 3vw, 1.5rem);
-    letter-spacing: 0.3em;
+    color: white;
+    font-family: serif;
+    font-size: clamp(1.6rem, 3vw, 1.8rem);
+    /* letter-spacing: 0.3em; */
     text-transform: uppercase;
-    opacity: 0.9;
+    text-shadow: 2px 2px 0 black;
 }
 
 /* Hero Section */
