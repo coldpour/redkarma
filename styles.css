@@ -201,7 +201,24 @@ body {
 }
 
 .merch-item {
-    margin: 0 auto;
+    background: rgba(255, 255, 255);
+    border: 1px solid rgba(220, 20, 60, 0.3);
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    transition: all 0.3s ease;
+    border-radius: 8px;
+}
+
+.merch-item:hover {
+    border-color: rgba(220, 20, 60, 0.6);
+    box-shadow: 0 0 100px red;
+    transform: translateX(10px);
+}
+
+.merch-item img {
+    width: clamp(200px, 50vw, 400px);
 }
 
 .merch-text {
