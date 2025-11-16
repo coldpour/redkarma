@@ -23,7 +23,17 @@ body {
     padding: 0 20px;
 }
 
+.hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background: url('glitter.jpg') repeat;
+}
+
 .title {
+    position: relative;
+    z-index: 1;
     padding: 40px 0 20px 0;
     text-align: center;
     font-family: tungsten, 'Helvetica Neue', Arial, sans-serif;
@@ -47,24 +57,14 @@ body {
     text-shadow: 2px 2px 0 black;
 }
 
-/* Hero Section */
-.hero {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
-    margin-top: -3rem;
-    z-index: 0;
-}
 
 .hero-video {
+    z-index: 0;
     position: absolute;
-    top: 50%;
+    top: clamp(60%, 15vw, 90%);
     left: 50%;
-    width: 100vw;
-    height: 56.25vw; /* 16:9 aspect ratio */
+    min-width: 56.25vh;
     min-height: 100vh;
-    min-width: 177.77vh; /* 16:9 aspect ratio */
     transform: translate(-50%, -50%);
     pointer-events: none;
     border: none;
