@@ -5,6 +5,11 @@
     box-sizing: border-box;
 }
 
+@font-face {
+    font-family: "tungsten";
+    src: url("tungsten.otf") format("opentype");
+}
+
 body {
     font-family: 'Helvetica Neue', Arial, sans-serif;
     line-height: 1.6;
@@ -19,6 +24,7 @@ body {
 }
 
 .title {
+    font-family: tungsten, 'Helvetica Neue', Arial, sans-serif;
     height: clamp(10rem, 28vw, 18rem);
     z-index: 1;
     position: relative;
