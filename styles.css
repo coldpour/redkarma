@@ -33,14 +33,27 @@ body {
 
 .title {
     position: relative;
-    z-index: 1;
+    z-index: 2;
     padding: 40px 0 20px 0;
     text-align: center;
     font-family: tungsten, 'Helvetica Neue', Arial, sans-serif;
     background: url('glitter.jpg') repeat;
 }
 
+.backdrop {
+    z-index: 0;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: black;
+    opacity: .3;
+}
+
 .band-name {
+    position: relative;
+    z-index: 1;
     font-size: clamp(7rem, 10vw, 8rem);
     line-height: 0.8;
     letter-spacing: 0.1em;
@@ -49,17 +62,18 @@ body {
 }
 
 .tagline {
+    position: relative;
+    z-index: 1;
     color: white;
     font-family: serif;
     font-size: clamp(1.6rem, 3vw, 1.8rem);
-    /* letter-spacing: 0.3em; */
     text-transform: uppercase;
     text-shadow: 2px 2px 0 black;
 }
 
 
 .hero-video {
-    z-index: 0;
+    z-index: 1;
     position: absolute;
     top: clamp(60%, 15vw, 90%);
     left: 50%;
