@@ -1,3 +1,8 @@
+:root {
+    --primary-color-rgb: 220, 20, 60;
+    --primary-color-hover-rgb: 255, 23, 68;
+}
+
 /* Reset and Base Styles */
 * {
     margin: 0;
@@ -110,7 +115,7 @@ body {
 
 .show-item {
     background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(220, 20, 60, 0.3);
+    border: 1px solid rgba(var(--primary-color-rgb), 0.3);
     padding: 30px;
     display: flex;
     align-items: center;
@@ -120,8 +125,8 @@ body {
 }
 
 .show-item:hover {
-    background: rgba(220, 20, 60, 0.1);
-    border-color: rgba(220, 20, 60, 0.6);
+    background: rgba(var(--primary-color-rgb), 0.1);
+    border-color: rgba(var(--primary-color-rgb), 0.6);
     transform: translateX(10px);
 }
 
@@ -131,12 +136,12 @@ body {
     align-items: center;
     min-width: 80px;
     padding: 15px;
-    background: rgba(220, 20, 60, 0.2);
+    background: rgba(var(--primary-color-rgb), 0.2);
     border-radius: 8px;
 }
 
 .show-date .month {
-    color: #dc143c;
+    color: rgba(var(--primary-color-rgb), 1);
     font-weight: 700;
     font-size: 1.2rem;
     letter-spacing: 0.1em;
@@ -165,7 +170,7 @@ body {
 
 .show-action .btn {
     padding: 12px 30px;
-    background: #dc143c;
+    background: rgba(var(--primary-color-rgb), 1);
     color: #fff;
     text-decoration: none;
     border-radius: 30px;
@@ -177,8 +182,8 @@ body {
 }
 
 .show-action .btn:hover {
-    background: #ff1744;
-    box-shadow: 0 0 20px rgba(220, 20, 60, 0.6);
+    background: rgba(var(--primary-color-hover-rgb), 1);
+    box-shadow: 0 0 20px rgba(var(--primary-color-rgb), 0.6);
     transform: scale(1.05);
 }
 
@@ -205,7 +210,7 @@ body {
 
 .merch-item {
     background: rgba(255, 255, 255);
-    border: 1px solid rgba(220, 20, 60, 0.3);
+    border: 1px solid rgba(var(--primary-color-rgb), 0.3);
     padding: 10px;
     display: flex;
     align-items: center;
@@ -215,8 +220,8 @@ body {
 }
 
 .merch-item:hover {
-    border-color: rgba(220, 20, 60, 0.6);
-    box-shadow: 0 0 100px rgba(220, 20, 60, 0.6);
+    border-color: rgba(var(--primary-color-rgb), 0.6);
+    box-shadow: 0 0 100px rgba(var(--primary-color-rgb), 0.6);
     transform: translateX(10px);
 }
 
@@ -270,7 +275,7 @@ body {
     flex: 1;
     padding: 15px 20px;
     background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(220, 20, 60, 0.3);
+    border: 1px solid rgba(var(--primary-color-rgb), 0.3);
     border-radius: 30px;
     color: #fff;
     font-size: 1rem;
@@ -283,13 +288,13 @@ body {
 }
 
 .email-form input[type="email"]:focus {
-    border-color: #dc143c;
+    border-color: rgba(var(--primary-color-rgb), 1);
     background: rgba(255, 255, 255, 0.15);
 }
 
 .email-form .btn-submit {
     padding: 15px 40px;
-    background: #dc143c;
+    background: rgba(var(--primary-color-rgb), 1);
     color: #fff;
     border: none;
     border-radius: 30px;
@@ -301,8 +306,8 @@ body {
 }
 
 .email-form .btn-submit:hover {
-    background: #ff1744;
-    box-shadow: 0 0 20px rgba(220, 20, 60, 0.6);
+    background: rgba(var(--primary-color-hover-rgb), 1);
+    box-shadow: 0 0 20px rgba(var(--primary-color-rgb), 0.6);
     transform: scale(1.05);
 }
 
@@ -326,17 +331,17 @@ body {
     width: 60px;
     height: 60px;
     background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(220, 20, 60, 0.3);
+    border: 1px solid rgba(var(--primary-color-rgb), 0.3);
     border-radius: 50%;
     color: #fff;
     transition: all 0.3s ease;
 }
 
 .social-link:hover {
-    background: rgba(220, 20, 60, 0.2);
-    border-color: #dc143c;
+    background: rgba(var(--primary-color-rgb), 0.2);
+    border-color: rgba(var(--primary-color-rgb), 1);
     transform: translateY(-5px) scale(1.1);
-    box-shadow: 0 10px 30px rgba(220, 20, 60, 0.4);
+    box-shadow: 0 10px 30px rgba(var(--primary-color-rgb), 0.4);
 }
 
 .social-link svg {
@@ -348,7 +353,7 @@ body {
 .footer {
     padding: 30px 0;
     background: #0a0a0a;
-    border-top: 1px solid rgba(220, 20, 60, 0.2);
+    border-top: 1px solid rgba(var(--primary-color-rgb), 0.2);
 }
 
 .footer p {
