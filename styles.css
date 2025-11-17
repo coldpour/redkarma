@@ -1,6 +1,6 @@
 :root {
-    --primary-color-rgb: 220, 20, 60;
-    --primary-color-hover-rgb: 255, 23, 68;
+    --primary-color-rgb: 255, 100, 255;
+    --primary-color-hover-rgb: 255, 60, 255;
 }
 
 /* Reset and Base Styles */
@@ -51,7 +51,17 @@ body {
     bottom: 0;
     left: 0;
     right: 0;
-    background: rgb(0,0,0,.3);
+    background: rgba(0,0,0,.3);
+}
+
+.filter {
+    z-index: 0;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(var(--primary-color-rgb),.3);
 }
 
 .backdrop.gradient {
