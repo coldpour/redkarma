@@ -16,6 +16,11 @@
     src: url("tungsten.otf") format("opentype");
 }
 
+@font-face {
+    font-family: "eras";
+    src: url("eras.ttf") format("truetype");
+}
+
 body {
     font-family: 'Helvetica Neue', Arial, sans-serif;
     line-height: 1.6;
@@ -130,8 +135,8 @@ a.email {
     position: relative;
     z-index: 1;
     color: white;
-    font-family: serif;
-    font-size: clamp(1.6rem, 3vw, 1.8rem);
+    font-family: eras, serif;
+    font-size: clamp(2.2rem, 3vw, 3rem);
     text-transform: uppercase;
     text-shadow: 2px 2px 0 black;
 }
