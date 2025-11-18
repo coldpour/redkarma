@@ -106,12 +106,43 @@
     <div class="container">
         <h2>Stay Connected</h2>
         <p class="subscribe-text">Join our mailing list for exclusive updates and announcements.</p>
-        <form class="email-form" action="#" method="post">
-            <input type="email" name="email" placeholder="Enter your email address" required>
+        <form class="email-form" id="myForm" action="">
+            <input type="text" name="b_544170e9efaa8d076e050e5dd_166" tabindex="-1" value="" style="display: none;">
+            <input type="hidden" name="ht" value="2486588c90f14280f2aa7b6e800b69148aa516d0:MTc2MzQ0NDk1MC42NzM2">
+            <input type="email" name="EMAIL" placeholder="Enter your email address" required id="mc-EMAIL">
             <button type="submit" class="btn btn-submit">Subscribe</button>
         </form>
     </div>
 </section>
+<script>
+    const myForm = document.getElementById('myForm');
+
+    myForm.addEventListener('submit', async (event) => {
+        event.preventDefault();
+        const formData = new FormData(myForm);
+
+        try {
+            await fetch('https://mc.us22.list-manage.com/subscribe/landing-page?u=544170e9efaa8d076e050e5dd&id=02305571fe&f_id=00e6c2e1f0', {
+                method: 'POST',
+                body: formData
+            });
+        } catch (error) {
+            // ignore the CORS error. Assume submission was successful.
+            const btn = document.querySelector('.btn-submit');
+            const initialText = btn.textContent;
+            const pText = document.querySelector('.subscribe-text').innerHTML;
+            btn.classList.add('success');
+            btn.textContent = "You're in!";
+            document.getElementById('mc-EMAIL').value = '';
+            document.querySelector('.subscribe-text').innerHTML = 'You just earned some Karma!';
+            setTimeout(() => {
+                btn.classList.remove('success');
+                btn.textContent = initialText;
+                document.querySelector('.subscribe-text').innerHTML = pText;
+            }, 3000);
+        }
+    });
+</script>
 
 <!-- Social Media Section -->
 <section id="social" class="social">
@@ -143,6 +174,17 @@
                 <path d="M37.9281 17C38.4298 21.2545 40.825 23.7941 45 24.0658V28.8451C42.5859 29.0794 40.4652 28.3016 38.0038 26.821V35.7423C38.0038 47.147 25.4788 50.7361 20.4233 42.5457C17.1856 37.3073 19.1642 28.1048 29.5496 27.73V32.781C28.7296 32.9058 27.9219 33.1002 27.1355 33.362C24.835 34.1398 23.5191 35.583 23.8883 38.1413C24.5889 43.033 33.6584 44.4856 32.901 34.9176V17H37.9091H37.9281Z"></path>
             </svg>
         </a>
+    </div>
+</section>
+
+<section id="booking" class="booking">
+    <div class="container">
+        <h2>Booking</h2>
+        <p class="text">Let's get the party started!</p>
+        <div class="booking-info">
+            <h4>Ray Coughlin</h4>
+            <a href="mailto:raycoughlin@earthlink.net" class="email text">raycoughlin@earthlink.net</a>
+        </div>
     </div>
 </section>
 

@@ -1,6 +1,7 @@
 :root {
     --primary-color-rgb: 255, 100, 255;
     --primary-color-hover-rgb: 255, 60, 255;
+    --success-color-rgb: 0, 255, 128;
 }
 
 /* Reset and Base Styles */
@@ -22,14 +23,59 @@ body {
     background: black;
 }
 
+section {
+    padding: 60px 0;
+}
+
 .container {
     max-width: 800px;
     margin: 0 auto;
     padding: 0 20px;
 }
 
+h2 {
+    color: #fff;
+    font-size: clamp(2rem, 5vw, 3rem);
+    text-align: center;
+    margin-bottom: 20px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+
+.text {
+    color: #999;
+    text-align: center;
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h4 {
+    color: #999;
+    text-align: center;
+    font-size: 1.5rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+a.email {
+    text-align: center;
+}
+
+.booking {
+    text-align: center;
+    background: linear-gradient(180deg, #1a1a1a 0%, #0a0a0a 100%);
+}
+.booking .text {
+    margin-bottom: 40px;
+}
+
 .hero {
     position: relative;
+    padding-top: 0;
     width: 100%;
     height: 100vh;
     overflow: hidden;
@@ -252,7 +298,7 @@ body {
 
 /* Subscribe Section */
 .subscribe {
-    padding: 80px 0;
+    padding: 80px 0 30px 0;
     background: #1a1a1a;
 }
 
@@ -322,10 +368,20 @@ body {
     transform: scale(1.05);
 }
 
+.email-form .btn-submit.success {
+    background: rgba(var(--success-color-rgb), 1);
+}
+
+.email-form .btn-submit.success:hover {
+    background: rgba(var(--success-color-rgb), 1);
+    box-shadow: none;
+    transform: scale(1.0);
+}
+
 /* Social Section */
 .social {
-    padding: 60px 0;
-    background: linear-gradient(180deg, #1a1a1a 0%, #0a0a0a 100%);
+    padding: 10px 0 60px 0;
+    background: #1a1a1a;
 }
 
 .social-links {
@@ -358,6 +414,15 @@ body {
 .social-link svg {
     width: 28px;
     height: 28px;
+}
+
+.booking-info {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(var(--primary-color-rgb), 0.3);
+    padding: 30px;
+    border-radius: 8px;
+    max-width: 300px;
+    margin: 0 auto;
 }
 
 /* Footer */
