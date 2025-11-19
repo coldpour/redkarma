@@ -223,6 +223,9 @@ h4 {
 .show-item {
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(var(--primary-color-rgb), 0.3);
+    padding: 30px;
+    display: flex;
+    align-items: center;
     gap: 30px;
     transition: all 0.3s ease;
     border-radius: 8px;
@@ -232,7 +235,6 @@ h4 {
     background: rgba(var(--primary-color-rgb), 0.1);
     border-color: rgba(var(--primary-color-rgb), 0.6);
     transform: translateX(10px);
-    transition: all 0.3s ease;
 }
 
 .show-date {
@@ -316,6 +318,9 @@ h4 {
 .merch-item {
     background: rgba(255, 255, 255);
     border: 1px solid rgba(var(--primary-color-rgb), 0.3);
+    padding: 10px;
+    display: flex;
+    align-items: center;
     gap: 30px;
     transition: all 0.3s ease;
     border-radius: 8px;
@@ -325,7 +330,6 @@ h4 {
     border-color: rgba(var(--primary-color-rgb), 0.6);
     box-shadow: 0 0 100px rgba(var(--primary-color-rgb), 0.6);
     transform: translateX(10px);
-    transition: all 0.3s ease;
 }
 
 .merch-item img {
@@ -379,6 +383,9 @@ h4 {
     padding: 15px 20px;
     background: rgba(255, 255, 255, 0.1);
     border: 1px solid rgba(var(--primary-color-rgb), 0.3);
+    border-radius: 30px;
+    color: #fff;
+    font-size: 1rem;
     outline: none;
     transition: all 0.3s ease;
 }
@@ -388,7 +395,6 @@ h4 {
 }
 
 .email-form input[type="email"]:focus {
-    transition: all 0.3s ease;
     border-color: rgba(var(--primary-color-rgb), 1);
     background: rgba(255, 255, 255, 0.15);
 }
@@ -399,6 +405,9 @@ h4 {
     color: #fff;
     border: none;
     border-radius: 30px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
     cursor: pointer;
     transition: all 0.3s ease;
 }
@@ -408,7 +417,6 @@ h4 {
     box-shadow: 0 0 20px rgba(var(--primary-color-rgb), 0.6);
     transform: scale(1.05);
 }
-    transition: all 0.3s ease;
 
 .email-form .btn-submit.success {
     background: rgba(var(--success-color-rgb), 1);
@@ -439,6 +447,9 @@ h4 {
     justify-content: center;
     width: 60px;
     height: 60px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(var(--primary-color-rgb), 0.3);
+    border-radius: 50%;
     color: #fff;
     transition: all 0.3s ease;
 }
@@ -448,7 +459,6 @@ h4 {
     border-color: rgba(var(--primary-color-rgb), 1);
     transform: translateY(-5px) scale(1.1);
     box-shadow: 0 10px 30px rgba(var(--primary-color-rgb), 0.4);
-    transition: all 0.3s ease;
 }
 
 .social-link svg {
