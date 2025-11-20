@@ -68,7 +68,7 @@ h4 {
 
 .booking {
     text-align: center;
-    background: linear-gradient(180deg, #1a1a1a 0%, #0a0a0a 100%);
+    background: #1a1a1a;
 }
 
 .booking-text {
@@ -464,6 +464,22 @@ h4 {
 .social-link svg {
     width: 28px;
     height: 28px;
+}
+
+.listen {
+    background: linear-gradient(180deg, #1a1a1a 0%, #0a0a0a 100%);
+}
+
+.preview-video {
+    width: 56.25vh;
+    height: 100vh;
+    border: none;
+    display: block;
+    margin: auto;
+}
+
+.preview-video + .preview-video {
+    margin-top: 20vh;
 }
 
 /* Footer */
