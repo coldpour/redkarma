@@ -1,8 +1,255 @@
-Past Shows
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Red Karma – Shows</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-Lincoln Theater
-Historic Everett Theater
-Chalet Theater
-Muckleshoot Casino
-Aurora Borealis
-Mirkwood
+  <!-- Use the same stylesheet as redkarma13.com -->
+  <!-- If your CSS file lives at a different path, just adjust this href. -->
+  <link rel="stylesheet" href="https://redkarma13.com/styles.css" />
+
+  <!-- Optional: a bit of layout help on top of the existing stylesheet -->
+  <style>
+    body {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1.5rem;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+
+    header h1 {
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 0.25rem;
+    }
+
+    header p {
+      opacity: 0.85;
+      font-size: 0.95rem;
+    }
+
+    .shows-section h2 {
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+
+    .shows-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .show-card {
+      border-radius: 0.75rem;
+      padding: 1.25rem 1.5rem;
+      background: rgba(0, 0, 0, 0.25);
+      backdrop-filter: blur(6px);
+      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.35);
+    }
+
+    .show-date {
+      font-size: 0.85rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      opacity: 0.85;
+      margin-bottom: 0.4rem;
+    }
+
+    .show-venue {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin-bottom: 0.15rem;
+    }
+
+    .show-location {
+      font-size: 0.9rem;
+      opacity: 0.9;
+      margin-bottom: 0.75rem;
+    }
+
+    .show-meta {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      opacity: 0.75;
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 1rem;
+      }
+
+      header h1 {
+        font-size: 1.4rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Red Karma</h1>
+    <p>Show History &amp; Past Dates</p>
+  </header>
+
+  <main>
+    <section class="shows-section" aria-labelledby="shows-heading">
+      <h2 id="shows-heading">Live Shows</h2>
+
+      <div class="shows-grid">
+        <!-- 2025 -->
+        <article class="show-card">
+          <div class="show-date">
+            <time datetime="2025-09-05">September 5, 2025</time>
+          </div>
+          <div class="show-venue">Farmstrong</div>
+          <div class="show-location">Mount Vernon, WA</div>
+          <div class="show-meta">2025 • Washington</div>
+        </article>
+
+        <article class="show-card">
+          <div class="show-date">
+            <time datetime="2025-08-19">August 19, 2025</time>
+          </div>
+          <div class="show-venue">Concerts on the Green</div>
+          <div class="show-location">Issaquah, WA</div>
+          <div class="show-meta">2025 • Washington</div>
+        </article>
+
+        <article class="show-card">
+          <div class="show-date">
+            <time datetime="2025-08-01">August 1, 2025</time>
+          </div>
+          <div class="show-venue">San Juan Island Brewery</div>
+          <div class="show-location">Friday Harbor, WA</div>
+          <div class="show-meta">2025 • Washington</div>
+        </article>
+
+        <article class="show-card">
+          <div class="show-date">
+            <time datetime="2025-07-25">July 25, 2025</time>
+          </div>
+          <div class="show-venue">Swiftwater Cellars</div>
+          <div class="show-location">Cle Elum, WA</div>
+          <div class="show-meta">2025 • Washington</div>
+        </article>
+
+        <article class="show-card">
+          <div class="show-date">
+            <time datetime="2025-06-07">June 7, 2025</time>
+          </div>
+          <div class="show-venue">Chalet Theatre</div>
+          <div class="show-location">Enumclaw, WA</div>
+          <div class="show-meta">2025 • Washington</div>
+        </article>
+
+        <article class="show-card">
+          <div class="show-date">
+            <time datetime="2025-05-31">May 31, 2025</time>
+          </div>
+          <div class="show-venue">Lincoln Theatre</div>
+          <div class="show-location">Mount Vernon, WA</div>
+          <div class="show-meta">2025 • Washington</div>
+        </article>
+
+        <article class="show-card">
+          <div class="show-date">
+            <time datetime="2025-02-21">February 21, 2025</time>
+          </div>
+          <div class="show-venue">The Historic Everett Theatre</div>
+          <div class="show-location">Everett, WA</div>
+          <div class="show-meta">2025 • Washington</div>
+        </article>
+
+        <article class="show-card">
+          <div class="show-date">
+            <time datetime="2025-01-11">January 11, 2025</time>
+          </div>
+          <div class="show-venue">Madame Lou’s</div>
+          <div class="show-location">Seattle, WA</div>
+          <div class="show-meta">2025 • Washington</div>
+        </article>
+
+        <!-- 2024 -->
+        <article class="show-card">
+          <div class="show-date">
+            <time datetime="2024-12-20">December 20, 2024</time>
+          </div>
+          <div class="show-venue">Muckleshoot Casino</div>
+          <div class="show-location">Aurora, WA</div>
+          <div class="show-meta">2024 • Washington</div>
+        </article>
+
+        <article class="show-card">
+          <div class="show-date">
+            <time datetime="2024-12-13">December 13, 2024</time>
+          </div>
+          <div class="show-venue">Bar 211</div>
+          <div class="show-location">Bellingham, WA</div>
+          <div class="show-meta">2024 • Washington</div>
+        </article>
+
+        <article class="show-card">
+          <div class="show-date">
+            <time datetime="2024-10-18">October 18, 2024</time>
+          </div>
+          <div class="show-venue">Bar 211</div>
+          <div class="show-location">Bellingham, WA</div>
+          <div class="show-meta">2024 • Washington</div>
+        </article>
+
+        <article class="show-card">
+          <div class="show-date">
+            <time datetime="2024-09-20">September 20, 2024</time>
+          </div>
+          <div class="show-venue">The Historic Everett Theatre</div>
+          <div class="show-location">Everett, WA</div>
+          <div class="show-meta">2024 • Washington</div>
+        </article>
+
+        <article class="show-card">
+          <div class="show-date">
+            <time datetime="2024-09-07">September 7, 2024</time>
+          </div>
+          <div class="show-venue">Blue Room</div>
+          <div class="show-location">Bellingham, WA</div>
+          <div class="show-meta">2024 • Washington</div>
+        </article>
+
+        <article class="show-card">
+          <div class="show-date">
+            <time datetime="2024-09-06">September 6, 2024</time>
+          </div>
+          <div class="show-venue">Farmstrong</div>
+          <div class="show-location">Mount Vernon, WA</div>
+          <div class="show-meta">2024 • Washington</div>
+        </article>
+
+        <article class="show-card">
+          <div class="show-date">
+            <time datetime="2024-08-23">August 23, 2024</time>
+          </div>
+          <div class="show-venue">Aurora Borealis</div>
+          <div class="show-location">Shoreline, WA</div>
+          <div class="show-meta">2024 • Washington</div>
+        </article>
+
+        <article class="show-card">
+          <div class="show-date">
+            <time datetime="2024-07-19">July 19, 2024</time>
+          </div>
+          <div class="show-venue">Mirkwood</div>
+          <div class="show-location">Arlington, WA</div>
+          <div class="show-meta">2024 • Washington</div>
+        </article>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
