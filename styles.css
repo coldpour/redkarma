@@ -471,11 +471,14 @@ h4 {
 }
 
 .preview-video {
-    width: 56.25vh;
+    width: 100vw;
     height: 100vh;
+    max-width: 56.25vh;
+    max-height: 177.78vw;
     border: none;
     display: block;
     margin: auto;
+    object-fit: cover;
 }
 
 .preview-video + .preview-video {
