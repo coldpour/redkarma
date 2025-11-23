@@ -230,8 +230,72 @@ h4 {
 
 .shows.past {
     background: linear-gradient(180deg, #000, var(--mid-grey), var(--footer-color));
+    padding: 80px 0 40px;
 }
 
+.past .container {
+    max-width: 650px;
+}
+
+.past .shows-list {
+    gap: 0;
+}
+
+.past .show-item {
+    font-family: eras, serif;
+    border: none;
+    flex-direction: row;
+    background: none;
+    padding: 0;
+    gap: min(2vw, 20px);
+}
+
+.past .show-item:hover {
+    transform: none;
+}
+
+.past .show-date {
+    background: none;
+    border-right: 1px solid var(--text-color-secondary);
+    flex-direction: row;
+    border-radius: 0;
+    justify-content: end;
+    align-items: baseline;
+    width: min(23vw, 130px);
+    padding: min(3vw, 15px);
+
+    @media (max-width: 768px) {
+        width: 23vw;
+        max-width: none;
+    }
+}
+
+.past .show-date .day {
+        font-size: min(9vw, 56px);
+}
+
+.past .show-date .month {
+        font-size: min(4.5vw, 26px);
+}
+
+.past .show-details {
+    text-align: left;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.past .show-details .venue {
+    font-size: min(5vw, 32px);
+    margin-bottom: 0;
+}
+
+.past .show-details .location {
+    font-size: min(3.5vw, 24px);
+}
+
+.past.booking {
+    background: var(--footer-color);
+}
 .shows h2 {
     color: var(--text-color-primary);
     font-size: clamp(2rem, 5vw, 3rem);
