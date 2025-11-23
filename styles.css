@@ -2,6 +2,11 @@
     --primary-color-rgb: 255, 100, 255;
     --primary-color-hover-rgb: 255, 60, 255;
     --success-color-rgb: 0, 255, 128;
+    --footer-color: #0a0a0a;
+    --mid-grey: #1a1a1a;
+    --text-color-secondary: #999;
+    --text-color-primary: #fff;
+    --text-color-tertiary: #666;
 }
 
 /* Reset and Base Styles */
@@ -39,7 +44,7 @@ section {
 }
 
 h2 {
-    color: #fff;
+    color: var(--text-color-primary);
     font-size: clamp(2rem, 5vw, 3rem);
     text-align: center;
     margin-bottom: 20px;
@@ -49,7 +54,7 @@ h2 {
 
 
 .text {
-    color: #999;
+    color: var(--text-color-secondary);
     text-align: center;
     font-size: 1.1rem;
     max-width: 600px;
@@ -58,7 +63,7 @@ h2 {
 }
 
 h4 {
-    color: #999;
+    color: var(--text-color-secondary);
     text-align: center;
     font-size: 1.5rem;
     max-width: 600px;
@@ -68,11 +73,11 @@ h4 {
 
 .booking {
     text-align: center;
-    background: #1a1a1a;
+    background: var(--mid-grey);
 }
 
 .booking-text {
-    color: #999;
+    color: var(--text-color-secondary);
     text-align: center;
     font-size: 1.1rem;
     margin-bottom: 40px;
@@ -82,11 +87,11 @@ h4 {
 }
 
 .booking-name {
-    color: #999;
+    color: var(--text-color-secondary);
 }
 
 .booking-email {
-    color: #999;
+    color: var(--text-color-secondary);
 }
 
 .booking-info {
@@ -142,7 +147,7 @@ h4 {
     bottom: 0;
     left: 0;
     right: 0;
-    background: rgba(0,0,0,.3);
+    background: rgba(0, 0, 0, .3);
 }
 
 .filter {
@@ -152,11 +157,11 @@ h4 {
     bottom: 0;
     left: 0;
     right: 0;
-    background: rgba(var(--primary-color-rgb),.3);
+    background: rgba(var(--primary-color-rgb), .3);
 }
 
 .backdrop.gradient {
-    background: linear-gradient(rgb(0,0,0,.3), rgb(0,0,0,1));
+    background: linear-gradient(rgb(0, 0, 0, .3), rgb(0, 0, 0, 1));
 }
 
 .band-name {
@@ -166,14 +171,14 @@ h4 {
     font-size: min(24vw, 126px);
     line-height: 0.8;
     letter-spacing: 0.1em;
-    color: white;
+    color: var(--text-color-primary);
     text-shadow: 5px 5px 0 black;
 }
 
 .tagline {
     position: relative;
     z-index: 1;
-    color: white;
+    color: var(--text-color-primary);
     font-family: eras, serif;
     font-size: min(8vw, 42px);
     text-transform: uppercase;
@@ -202,11 +207,15 @@ h4 {
 /* Shows Section */
 .shows {
     padding: 80px 0;
-    background: linear-gradient(180deg, #000 0%, #1a1a1a 100%);
+    background: linear-gradient(180deg, #000, var(--mid-grey));
+}
+
+.shows.past {
+    background: linear-gradient(180deg,  #000, var(--mid-grey), var(--footer-color));
 }
 
 .shows h2 {
-    color: #fff;
+    color: var(--text-color-primary);
     font-size: clamp(2rem, 5vw, 3rem);
     text-align: center;
     margin-bottom: 60px;
@@ -224,7 +233,7 @@ h4 {
 }
 
 .past-shows-link {
-    color: #fff;
+    color: var(--text-color-primary);
     text-decoration: none;
     font-weight: 600;
     font-size: 1.05rem;
@@ -292,7 +301,7 @@ h4 {
 }
 
 .show-date .day {
-    color: #fff;
+    color: var(--text-color-primary);
     font-size: 2.5rem;
     font-weight: 900;
 }
@@ -302,20 +311,20 @@ h4 {
 }
 
 .show-details .venue {
-    color: #fff;
+    color: var(--text-color-primary);
     font-size: 1.5rem;
     margin-bottom: 5px;
 }
 
 .show-details .location {
-    color: #999;
+    color: var(--text-color-secondary);
     font-size: 1.1rem;
 }
 
 .show-action .btn {
     padding: 12px 30px;
     background: rgba(var(--primary-color-rgb), 1);
-    color: #fff;
+    color: var(--text-color-primary);
     text-decoration: none;
     border-radius: 30px;
     font-weight: 700;
@@ -333,11 +342,11 @@ h4 {
 
 .merch {
     padding: 80px 0;
-    background: #1a1a1a;
+    background: var(--mid-grey);
 }
 
 .merch h2 {
-    color: #fff;
+    color: var(--text-color-primary);
     font-size: clamp(2rem, 5vw, 3rem);
     text-align: center;
     margin-bottom: 20px;
@@ -374,7 +383,7 @@ h4 {
 }
 
 .merch-text {
-    color: #999;
+    color: var(--text-color-secondary);
     text-align: center;
     font-size: 1.1rem;
     margin-bottom: 60px;
@@ -386,11 +395,11 @@ h4 {
 /* Subscribe Section */
 .subscribe {
     padding: 80px 0 30px 0;
-    background: #1a1a1a;
+    background: var(--mid-grey);
 }
 
 .subscribe h2 {
-    color: #fff;
+    color: var(--text-color-primary);
     font-size: clamp(2rem, 5vw, 3rem);
     text-align: center;
     margin-bottom: 20px;
@@ -399,7 +408,7 @@ h4 {
 }
 
 .subscribe-text {
-    color: #999;
+    color: var(--text-color-secondary);
     text-align: center;
     font-size: 1.1rem;
     margin-bottom: 40px;
@@ -421,14 +430,14 @@ h4 {
     background: rgba(255, 255, 255, 0.1);
     border: 1px solid rgba(var(--primary-color-rgb), 0.3);
     border-radius: 30px;
-    color: #fff;
+    color: var(--text-color-primary);
     font-size: 1rem;
     outline: none;
     transition: all 0.3s ease;
 }
 
 .email-form input[type="email"]::placeholder {
-    color: #666;
+    color: var(--text-color-tertiary);
 }
 
 .email-form input[type="email"]:focus {
@@ -439,7 +448,7 @@ h4 {
 .email-form .btn-submit {
     padding: 15px 40px;
     background: rgba(var(--primary-color-rgb), 1);
-    color: #fff;
+    color: var(--text-color-primary);
     border: none;
     border-radius: 30px;
     font-weight: 700;
@@ -468,7 +477,7 @@ h4 {
 /* Social Section */
 .social {
     padding: 10px 0 60px 0;
-    background: #1a1a1a;
+    background: var(--mid-grey);
 }
 
 .social-links {
@@ -487,7 +496,7 @@ h4 {
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(var(--primary-color-rgb), 0.3);
     border-radius: 50%;
-    color: #fff;
+    color: var(--text-color-primary);
     transition: all 0.3s ease;
 }
 
@@ -504,7 +513,7 @@ h4 {
 }
 
 .listen {
-    background: linear-gradient(180deg, #1a1a1a 0%, #0a0a0a 100%);
+    background: linear-gradient(180deg, var(--mid-grey), var(--footer-color));
 }
 
 .preview-video {
@@ -522,15 +531,14 @@ h4 {
     margin-top: 20vh;
 }
 
-/* Footer */
 .footer {
     padding: 30px 0;
-    background: #0a0a0a;
+    background: var(--footer-color);
     border-top: 1px solid rgba(var(--primary-color-rgb), 0.2);
 }
 
 .footer p {
-    color: #666;
+    color: var(--text-color-tertiary);
     text-align: center;
     font-size: 0.9rem;
 }
