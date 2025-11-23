@@ -204,14 +204,32 @@ h4 {
     border: none;
 }
 
-/* Shows Section */
+.bio {
+    padding: 100px 20px 40px;
+}
+
+.bio .container {
+    max-width: none;
+}
+
+.bio .text {
+    color: var(--text-color-secondary);
+    font-size: clamp(1.1rem, 2vw, 32px);
+    max-width: none;
+    white-space: pre-line;
+
+    @media (max-width: 568px) {
+        white-space: normal;
+    }
+}
+
 .shows {
     padding: 80px 0;
     background: linear-gradient(180deg, #000, var(--mid-grey));
 }
 
 .shows.past {
-    background: linear-gradient(180deg,  #000, var(--mid-grey), var(--footer-color));
+    background: linear-gradient(180deg, #000, var(--mid-grey), var(--footer-color));
 }
 
 .shows h2 {
@@ -514,6 +532,7 @@ h4 {
 
 .listen {
     background: linear-gradient(180deg, var(--mid-grey), var(--footer-color));
+    padding-bottom: 0;
 }
 
 .preview-video {
@@ -529,6 +548,10 @@ h4 {
 
 .preview-video + .preview-video {
     margin-top: 20vh;
+
+    @media (max-width: 768px) {
+        margin-top: 10vh;
+    }
 }
 
 .footer {
