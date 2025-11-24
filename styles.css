@@ -297,6 +297,8 @@ h4 {
 
 .past-hero {
     padding: 0;
+    position: relative;
+    background: url('glitter.jpg') repeat;
 }
 
 .past-shows-link-container {
