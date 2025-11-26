@@ -8,6 +8,23 @@
 </head>
 <body>
 
+<div class="stars-close"></div>
+<div class="stars-mid"></div>
+<div class="stars-far"></div>
+<script>
+  const stars = document.querySelector(".stars-close");
+  const stars2 = document.querySelector(".stars-mid");
+
+  window.addEventListener("scroll", () => {
+    const scrollY = window.scrollY;
+    // smaller factor = slower movement (farther away)
+    const offset = scrollY * 0.02;
+    const offset2 = scrollY * 0.01;
+    stars.style.transform = `translateY(${offset}px)`;
+    stars2.style.transform = `translateY(${offset2}px)`;
+  });
+</script>
+
 <section class="hero">
     <div class="title">
         <h1 class="band-name">RED KARMA</h1>
@@ -28,9 +45,6 @@
 </section>
 
 <section id="shows" class="shows">
-    <div class="stars-close"></div>
-    <div class="stars-mid"></div>
-    <div class="stars-far"></div>
     <div class="container">
         <h2>Upcoming Shows</h2>
         <div class="shows-list">
