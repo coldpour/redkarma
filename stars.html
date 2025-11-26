@@ -26,24 +26,11 @@
       color: #fff;
     }
 
-    /* Container just for optional text */
-    .sky-wrap {
-      position: relative;
-      width: 100vw;
-      height: 100vh;
-      overflow: hidden;
-    }
-
-    /* STAR FIELDS
-       We fake hundreds of stars using box-shadow on tiny elements.
-       Each layer moves and twinkles slightly differently for depth.
-    */
-
-    .stars,
-    .stars2,
-    .stars3 {
+    .stars-close,
+    .stars-mid,
+    .stars-far {
       position: absolute;
-      top: 0;          /* start higher so we can drift down */
+      top: 0;
       left: 0;
       right: 0;
       bottom: 0;
@@ -53,8 +40,7 @@
       pointer-events: none;
     }
 
-    /* Closest/brightest stars */
-    .stars {
+    .stars-close {
       box-shadow:
         50vw 10vh white,
         10vw 20vh #f3f6ff,
@@ -72,12 +58,10 @@
         35vw 85vh #e1edff,
         95vw 45vh #f3f6ff;
       animation:
-        twinkle 3s ease-in-out infinite alternate,
-        driftDown 600s linear infinite;
+        twinkle 2s ease-in-out infinite alternate;
     }
 
-    /* Mid-distance stars (smaller + more) */
-    .stars2 {
+    .stars-mid {
       width: 1.5px;
       height: 1.5px;
       box-shadow:
@@ -103,12 +87,10 @@
         97vw 65vh #e4ebff;
       opacity: 0.8;
       animation:
-        twinkleSoft 4.5s ease-in-out infinite alternate,
-        driftDown 900s linear infinite;
+        twinkleSoft 3s ease-in-out infinite alternate;
     }
 
-    /* Far background stars (tiny, very soft) */
-    .stars3 {
+    .stars-far {
       width: 1px;
       height: 1px;
       box-shadow:
@@ -133,11 +115,8 @@
         92vw 82vh #d9e0ff;
       opacity: 0.6;
       animation:
-        twinkleSoft 6s ease-in-out infinite alternate-reverse,
-        driftDown 1200s linear infinite;
+        twinkleSoft 4s ease-in-out infinite alternate-reverse;
     }
-
-    /* Animations */
 
     @keyframes twinkle {
       0%   { filter: drop-shadow(0 0 2px rgba(255,255,255,0.7)); opacity: 0.6; }
@@ -150,19 +129,11 @@
       50%  { opacity: 0.9; }
       100% { opacity: 0.4; }
     }
-
-    /* Slow downward drift to simulate subtle motion */
-    @keyframes driftDown {
-      0%   { transform: translateY(0); }
-      100% { transform: translateY(50vh); }
-    }
   </style>
 </head>
 <body>
-  <div class="sky-wrap">
-    <div class="stars"></div>
-    <div class="stars2"></div>
-    <div class="stars3"></div>
-  </div>
+    <div class="stars-close"></div>
+    <div class="stars-mid"></div>
+    <div class="stars-far"></div>
 </body>
 </html>
