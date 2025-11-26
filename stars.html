@@ -2,174 +2,167 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Sparkling Starry Sky</title>
+  <title>Sparkling Starry Sky (CSS Only)</title>
   <style>
-    html, body {
+    :root {
+      color-scheme: dark;
+    }
+
+    * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
-      height: 100%;
+    }
+
+    body {
+      min-height: 100vh;
       overflow: hidden;
-      background: radial-gradient(ellipse at top, #1a2940 0%, #020818 60%, #000 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background:
+        radial-gradient(ellipse at top, #1d3255 0%, #050816 50%, #000000 100%);
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       color: #fff;
     }
 
-    canvas {
-      display: block;
-      position: fixed;
-      inset: 0;
-      width: 100%;
-      height: 100%;
+    /* Container just for optional text */
+    .sky-wrap {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
     }
 
-    /* Optional: subtle gradient at the bottom to feel like a horizon */
-    .horizon-glow {
-      position: fixed;
+    /* STAR FIELDS
+       We fake hundreds of stars using box-shadow on tiny elements.
+       Each layer moves and twinkles slightly differently for depth.
+    */
+
+    .stars,
+    .stars2,
+    .stars3 {
+      position: absolute;
+      top: 0;          /* start higher so we can drift down */
       left: 0;
       right: 0;
-      bottom: -20%;
-      height: 40%;
-      background: radial-gradient(circle at 50% 0%, rgba(80, 140, 255, 0.4), transparent 60%);
+      bottom: 0;
+      width: 2px;
+      height: 2px;
+      background: transparent;
       pointer-events: none;
-      mix-blend-mode: screen;
     }
 
-    /* Optional title text */
-    .title {
-      position: fixed;
-      top: 10%;
-      left: 50%;
-      transform: translateX(-50%);
-      text-align: center;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      font-size: 0.85rem;
+    /* Closest/brightest stars */
+    .stars {
+      box-shadow:
+        50vw 10vh white,
+        10vw 20vh #f3f6ff,
+        80vw 30vh #e1edff,
+        20vw 40vh white,
+        65vw 50vh #fdfdff,
+        30vw 60vh #eaf0ff,
+        90vw 70vh white,
+        15vw 80vh #f2f7ff,
+        55vw 90vh #dde8ff,
+        75vw 15vh white,
+        40vw 25vh #f5f7ff,
+        5vw  55vh #edf2ff,
+        60vw 75vh white,
+        35vw 85vh #e1edff,
+        95vw 45vh #f3f6ff;
+      animation:
+        twinkle 3s ease-in-out infinite alternate,
+        driftDown 600s linear infinite;
+    }
+
+    /* Mid-distance stars (smaller + more) */
+    .stars2 {
+      width: 1.5px;
+      height: 1.5px;
+      box-shadow:
+        8vw 5vh  #dbe4ff,
+        18vw 18vh #eef2ff,
+        28vw 32vh #cfdcff,
+        38vw 45vh #f6f7ff,
+        48vw 55vh #dde6ff,
+        58vw 65vh #cfd9ff,
+        68vw 80vh #f1f4ff,
+        78vw 20vh #dde7ff,
+        88vw 40vh #e4ecff,
+        3vw  70vh #dae2ff,
+        13vw 90vh #f8f9ff,
+        23vw 25vh #d5e1ff,
+        33vw 50vh #f4f7ff,
+        43vw 75vh #d7e2ff,
+        53vw 30vh #e7eeff,
+        63vw 10vh #f2f5ff,
+        73vw 60vh #e0e9ff,
+        83vw 85vh #dde6ff,
+        93vw 35vh #f2f6ff,
+        97vw 65vh #e4ebff;
       opacity: 0.8;
-      pointer-events: none;
+      animation:
+        twinkleSoft 4.5s ease-in-out infinite alternate,
+        driftDown 900s linear infinite;
     }
 
-    .title h1 {
-      font-size: 2.4rem;
-      margin: 0.4rem 0 0;
-      font-weight: 500;
+    /* Far background stars (tiny, very soft) */
+    .stars3 {
+      width: 1px;
+      height: 1px;
+      box-shadow:
+        6vw  8vh  #cdd6ff,
+        16vw 22vh #dfe6ff,
+        26vw 36vh #c3cffd,
+        36vw 48vh #e1e7ff,
+        46vw 62vh #c8d2ff,
+        56vw 78vh #dce3ff,
+        66vw 12vh #d4ddff,
+        76vw 26vh #cfd8ff,
+        86vw 52vh #dde3ff,
+        96vw 68vh #cad3ff,
+        12vw 42vh #dbe2ff,
+        22vw 58vh #cfd8ff,
+        32vw 72vh #d7deff,
+        42vw 88vh #c9d2ff,
+        52vw 18vh #d4ddff,
+        62vw 32vh #dbe2ff,
+        72vw 48vh #cfd8ff,
+        82vw 62vh #d2dbff,
+        92vw 82vh #d9e0ff;
+      opacity: 0.6;
+      animation:
+        twinkleSoft 6s ease-in-out infinite alternate-reverse,
+        driftDown 1200s linear infinite;
     }
 
-    .title span {
-      font-size: 0.8rem;
-      opacity: 0.7;
+    /* Animations */
+
+    @keyframes twinkle {
+      0%   { filter: drop-shadow(0 0 2px rgba(255,255,255,0.7)); opacity: 0.6; }
+      50%  { filter: drop-shadow(0 0 6px rgba(255,255,255,1));   opacity: 1; }
+      100% { filter: drop-shadow(0 0 2px rgba(255,255,255,0.7)); opacity: 0.7; }
+    }
+
+    @keyframes twinkleSoft {
+      0%   { opacity: 0.3; }
+      50%  { opacity: 0.9; }
+      100% { opacity: 0.4; }
+    }
+
+    /* Slow downward drift to simulate subtle motion */
+    @keyframes driftDown {
+      0%   { transform: translateY(0); }
+      100% { transform: translateY(50vh); }
     }
   </style>
 </head>
 <body>
-  <canvas id="starfield"></canvas>
-
-  <div class="horizon-glow"></div>
-
-  <div class="title">
-    <span>Night Sky</span>
-    <h1>Sparkling Stars</h1>
+  <div class="sky-wrap">
+    <div class="stars"></div>
+    <div class="stars2"></div>
+    <div class="stars3"></div>
   </div>
-
-  <script>
-   const canvas = document.getElementById("starfield");
-   const ctx = canvas.getContext("2d");
-
-   let width = window.innerWidth;
-   let height = window.innerHeight;
-   canvas.width = width;
-   canvas.height = height;
-
-   const STAR_COUNT = 200;
-   const stars = [];
-
-   function randomRange(min, max) {
-     return Math.random() * (max - min) + min;
-   }
-
-   function createStar() {
-     const depth = Math.random(); // 0 = near, 1 = far
-     return {
-       x: Math.random() * width,
-       y: Math.random() * height,
-       radius: randomRange(0.5, 2.2) * (1 - depth * 0.6),
-       baseAlpha: randomRange(0.3, 1),
-       twinkleSpeed: randomRange(0.0015, 0.004),
-       twinkleOffset: Math.random() * Math.PI * 2,
-       hue: randomRange(200, 260), // bluish to purplish stars
-       depth
-     };
-   }
-
-   function initStars() {
-     stars.length = 0;
-     for (let i = 0; i < STAR_COUNT; i++) {
-       stars.push(createStar());
-     }
-   }
-
-   function resize() {
-     width = window.innerWidth;
-     height = window.innerHeight;
-     canvas.width = width;
-     canvas.height = height;
-     initStars();
-   }
-
-   window.addEventListener("resize", resize);
-
-   let lastTime = 0;
-
-   function draw(timestamp) {
-     const delta = timestamp - lastTime;
-     lastTime = timestamp;
-
-     ctx.clearRect(0, 0, width, height);
-
-     // Subtle space "glow"
-     const gradient = ctx.createRadialGradient(
-       width / 2, height * 0.1, 0,
-       width / 2, height / 2, Math.max(width, height)
-     );
-     gradient.addColorStop(0, "rgba(140, 180, 255, 0.08)");
-     gradient.addColorStop(1, "rgba(0, 0, 0, 0.9)");
-     ctx.fillStyle = gradient;
-     ctx.fillRect(0, 0, width, height);
-
-     for (const star of stars) {
-       const twinkle = Math.sin(star.twinkleOffset + timestamp * star.twinkleSpeed) * 0.5 + 0.5; // 0–1
-       const alpha = star.baseAlpha * (0.4 + twinkle * 0.6) * (1 - star.depth * 0.3);
-
-       ctx.save();
-       ctx.globalAlpha = alpha;
-
-       // Slight blur halo
-       const gradientStar = ctx.createRadialGradient(
-         star.x, star.y, 0,
-         star.x, star.y, star.radius * 3
-       );
-       gradientStar.addColorStop(0, `hsla(${star.hue}, 80%, 90%, 1)`);
-       gradientStar.addColorStop(0.4, `hsla(${star.hue}, 80%, 70%, 0.8)`);
-       gradientStar.addColorStop(1, "rgba(255, 255, 255, 0)");
-
-       ctx.fillStyle = gradientStar;
-       ctx.beginPath();
-       ctx.arc(star.x, star.y, star.radius * 3, 0, Math.PI * 2);
-       ctx.fill();
-
-       // Bright core
-       ctx.fillStyle = `hsla(${star.hue}, 90%, 95%, 1)`;
-       ctx.beginPath();
-       ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
-       ctx.fill();
-
-       ctx.restore();
-     }
-
-     requestAnimationFrame(draw);
-   }
-
-   initStars();
-   requestAnimationFrame(draw);
-  </script>
 </body>
 </html>
