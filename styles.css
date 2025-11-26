@@ -554,3 +554,107 @@ h4 {
         padding: 20px;
     }
 }
+
+.stars-close,
+.stars-mid,
+.stars-far {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 2px;
+    height: 2px;
+    background: transparent;
+    pointer-events: none;
+}
+
+.stars-close {
+    box-shadow:
+    50vw 10vh white,
+    10vw 20vh #f3f6ff,
+    80vw 30vh #e1edff,
+    20vw 40vh white,
+    65vw 50vh #fdfdff,
+    30vw 60vh #eaf0ff,
+    90vw 70vh white,
+    15vw 80vh #f2f7ff,
+    55vw 90vh #dde8ff,
+    75vw 15vh white,
+    40vw 25vh #f5f7ff,
+    5vw  55vh #edf2ff,
+    60vw 75vh white,
+    35vw 85vh #e1edff,
+    95vw 45vh #f3f6ff;
+    animation:
+    twinkle 2s ease-in-out infinite alternate;
+}
+
+.stars-mid {
+    width: 1.5px;
+    height: 1.5px;
+    box-shadow:
+    8vw 5vh  #dbe4ff,
+    18vw 18vh #eef2ff,
+    28vw 32vh #cfdcff,
+    38vw 45vh #f6f7ff,
+    48vw 55vh #dde6ff,
+    58vw 65vh #cfd9ff,
+    68vw 80vh #f1f4ff,
+    78vw 20vh #dde7ff,
+    88vw 40vh #e4ecff,
+    3vw  70vh #dae2ff,
+    13vw 90vh #f8f9ff,
+    23vw 25vh #d5e1ff,
+    33vw 50vh #f4f7ff,
+    43vw 75vh #d7e2ff,
+    53vw 30vh #e7eeff,
+    63vw 10vh #f2f5ff,
+    73vw 60vh #e0e9ff,
+    83vw 85vh #dde6ff,
+    93vw 35vh #f2f6ff,
+    97vw 65vh #e4ebff;
+    opacity: 0.8;
+    animation:
+    twinkleSoft 3s ease-in-out infinite alternate;
+}
+
+.stars-far {
+    width: 1px;
+    height: 1px;
+    box-shadow:
+    6vw  8vh  #cdd6ff,
+    16vw 22vh #dfe6ff,
+    26vw 36vh #c3cffd,
+    36vw 48vh #e1e7ff,
+    46vw 62vh #c8d2ff,
+    56vw 78vh #dce3ff,
+    66vw 12vh #d4ddff,
+    76vw 26vh #cfd8ff,
+    86vw 52vh #dde3ff,
+    96vw 68vh #cad3ff,
+    12vw 42vh #dbe2ff,
+    22vw 58vh #cfd8ff,
+    32vw 72vh #d7deff,
+    42vw 88vh #c9d2ff,
+    52vw 18vh #d4ddff,
+    62vw 32vh #dbe2ff,
+    72vw 48vh #cfd8ff,
+    82vw 62vh #d2dbff,
+    92vw 82vh #d9e0ff;
+    opacity: 0.6;
+    animation:
+    twinkleSoft 4s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes twinkle {
+    0%   { filter: drop-shadow(0 0 2px rgba(255,255,255,0.7)); opacity: 0.6; }
+    50%  { filter: drop-shadow(0 0 6px rgba(255,255,255,1));   opacity: 1; }
+    100% { filter: drop-shadow(0 0 2px rgba(255,255,255,0.7)); opacity: 0.7; }
+}
+
+@keyframes twinkleSoft {
+    0%   { opacity: 0.3; }
+    50%  { opacity: 0.9; }
+    100% { opacity: 0.4; }
+}
