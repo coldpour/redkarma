@@ -395,6 +395,25 @@ h4 {
     font-size: 1.1rem;
 }
 
+.btn {
+    padding: 12px 30px;
+    background: rgba(var(--primary-color-rgb), 1);
+    color: var(--text-color-primary);
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.btn:hover {
+    background: rgba(var(--primary-color-hover-rgb), 1);
+    box-shadow: 0 0 20px rgba(var(--primary-color-rgb), 0.6);
+    transform: scale(1.05);
+}
+
 .show-action .btn {
     padding: 12px 30px;
     background: rgba(var(--primary-color-rgb), 1);
@@ -680,4 +699,8 @@ h4 {
     .show-item {
         padding: 20px;
     }
+}
+
+.stocking-stuffer {
+    width: 100%;
 }
