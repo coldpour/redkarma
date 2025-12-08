@@ -757,10 +757,20 @@ h4 {
     transform: scale(1.02);
 }
 
+.memorabilia-wrapper a {
+    display: block;
+    cursor: pointer;
+}
+
 .stocking-stuffer {
     width: 100%;
     display: block;
     border-radius: 8px;
+    transition: opacity 0.3s ease;
+}
+
+.memorabilia-wrapper a:hover .stocking-stuffer {
+    opacity: 0.9;
 }
 
 .disclaimer {
