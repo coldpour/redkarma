@@ -68,10 +68,6 @@ h4 {
     margin: 0 auto;
 }
 
-.booking {
-    background: var(--mid-grey);
-}
-
 .booking-name {
     color: var(--text-color-secondary);
 }
@@ -182,6 +178,7 @@ h4 {
 
 .bio {
     padding: 100px 20px 40px;
+    background: linear-gradient(180deg, #000, rgba(0,0,0,0));
 }
 
 .bio .container {
@@ -205,12 +202,7 @@ h4 {
     padding: 80px 0;
 }
 
-.shows {
-    background: linear-gradient(180deg, #000, var(--mid-grey));
-}
-
 .shows.past {
-    background: linear-gradient(180deg, #000, var(--mid-grey), var(--footer-color));
     padding: 80px 0 40px;
 }
 
@@ -274,9 +266,6 @@ h4 {
     font-size: min(3.5vw, 24px);
 }
 
-.past.booking {
-    background: var(--footer-color);
-}
 .shows h2 {
     margin-bottom: 60px;
 }
@@ -399,10 +388,6 @@ h4 {
     transform: scale(1.05);
 }
 
-.merch {
-    background: var(--mid-grey);
-}
-
 .merch-items {
     display: flex;
     flex-wrap: wrap;
@@ -437,7 +422,6 @@ h4 {
 
 .subscribe {
     padding: 80px 0 30px;
-    background: var(--mid-grey);
 }
 
 .email-form {
@@ -499,7 +483,6 @@ h4 {
 
 .social {
     padding: 10px 0 60px;
-    background: var(--mid-grey);
 }
 
 .social-links {
@@ -535,7 +518,6 @@ h4 {
 }
 
 .listen {
-    background: linear-gradient(180deg, var(--mid-grey), var(--footer-color));
     padding-bottom: 0;
 }
 
