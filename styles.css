@@ -281,6 +281,10 @@ h4 {
     margin-top: 20px;
 }
 
+.other-shows-link-container {
+    margin-top: 20px;
+}
+
 .past-shows-link {
     color: var(--text-color-primary);
     text-decoration: none;
@@ -297,6 +301,27 @@ h4 {
 }
 
 .past-shows-link:hover {
+    background: rgba(var(--primary-color-rgb), 0.2);
+    border-color: rgba(var(--primary-color-rgb), 1);
+    transform: translateX(10px);
+}
+
+.shows-link {
+    color: var(--text-color-primary);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.05rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 8px 14px 8px 18px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(var(--primary-color-rgb), 0.3);
+    border-radius: 999px;
+    transition: all 0.3s ease;
+}
+
+.shows-link:hover {
     background: rgba(var(--primary-color-rgb), 0.2);
     border-color: rgba(var(--primary-color-rgb), 1);
     transform: translateX(10px);
