@@ -9,7 +9,6 @@
     --text-color-tertiary: #666;
 }
 
-/* Reset and Base Styles */
 * {
     margin: 0;
     padding: 0;
@@ -36,6 +35,7 @@ body {
 
 section {
     padding: 60px 0;
+    text-align: center;
 }
 
 .container {
@@ -47,44 +47,29 @@ section {
 h2 {
     color: var(--text-color-primary);
     font-size: clamp(2rem, 5vw, 3rem);
-    text-align: center;
     margin-bottom: 20px;
     letter-spacing: 0.1em;
     text-transform: uppercase;
 }
 
-
-.text {
+.text,
+.subscribe-text {
     color: var(--text-color-secondary);
-    text-align: center;
     font-size: 1.1rem;
     max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto 40px;
+    text-wrap: balance;
 }
 
 h4 {
     color: var(--text-color-secondary);
-    text-align: center;
     font-size: 1.5rem;
     max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto;
 }
 
 .booking {
-    text-align: center;
     background: var(--mid-grey);
-}
-
-.booking-text {
-    color: var(--text-color-secondary);
-    text-align: center;
-    font-size: 1.1rem;
-    margin-bottom: 40px;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
 }
 
 .booking-name {
@@ -214,8 +199,13 @@ h4 {
     }
 }
 
-.shows {
+.shows,
+.merch,
+.memorabilia-section {
     padding: 80px 0;
+}
+
+.shows {
     background: linear-gradient(180deg, #000, var(--mid-grey));
 }
 
@@ -288,12 +278,7 @@ h4 {
     background: var(--footer-color);
 }
 .shows h2 {
-    color: var(--text-color-primary);
-    font-size: clamp(2rem, 5vw, 3rem);
-    text-align: center;
     margin-bottom: 60px;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
 }
 
 .past-hero {
@@ -316,7 +301,6 @@ h4 {
     align-items: center;
     gap: 4px;
     padding: 8px 14px 8px 18px;
-    box-shadow: none;
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(var(--primary-color-rgb), 0.3);
     border-radius: 999px;
@@ -415,37 +399,8 @@ h4 {
     transform: scale(1.05);
 }
 
-.show-action .btn {
-    padding: 12px 30px;
-    background: rgba(var(--primary-color-rgb), 1);
-    color: var(--text-color-primary);
-    text-decoration: none;
-    border-radius: 30px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    transition: all 0.3s ease;
-    display: inline-block;
-}
-
-.show-action .btn:hover {
-    background: rgba(var(--primary-color-hover-rgb), 1);
-    box-shadow: 0 0 20px rgba(var(--primary-color-rgb), 0.6);
-    transform: scale(1.05);
-}
-
 .merch {
-    padding: 80px 0;
     background: var(--mid-grey);
-}
-
-.merch h2 {
-    color: var(--text-color-primary);
-    font-size: clamp(2rem, 5vw, 3rem);
-    text-align: center;
-    margin-bottom: 20px;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
 }
 
 .merch-items {
@@ -476,39 +431,13 @@ h4 {
     width: clamp(200px, 50vw, 400px);
 }
 
-.merch-text {
-    color: var(--text-color-secondary);
-    text-align: center;
-    font-size: 1.1rem;
+.merch .text {
     margin-bottom: 60px;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
 }
 
-/* Subscribe Section */
 .subscribe {
-    padding: 80px 0 30px 0;
+    padding: 80px 0 30px;
     background: var(--mid-grey);
-}
-
-.subscribe h2 {
-    color: var(--text-color-primary);
-    font-size: clamp(2rem, 5vw, 3rem);
-    text-align: center;
-    margin-bottom: 20px;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-}
-
-.subscribe-text {
-    color: var(--text-color-secondary);
-    text-align: center;
-    font-size: 1.1rem;
-    margin-bottom: 40px;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
 }
 
 .email-form {
@@ -568,9 +497,8 @@ h4 {
     transform: scale(1.0);
 }
 
-/* Social Section */
 .social {
-    padding: 10px 0 60px 0;
+    padding: 10px 0 60px;
     background: var(--mid-grey);
 }
 
@@ -690,10 +618,6 @@ h4 {
         width: 24px;
         height: 24px;
     }
-
-    .text, .booking-text, .merch-text, .subscribe-text {
-        text-wrap: balance;
-    }
 }
 
 @media (max-width: 480px) {
@@ -709,8 +633,7 @@ h4 {
         padding: 20px;
     }
 
-    .text, .booking-text, .merch-text, .subscribe-text {
-        text-wrap: balance;
+    .booking .text, .merch .text, .subscribe-text {
         max-width: 90%;
     }
 
@@ -779,9 +702,7 @@ h4 {
 }
 
 .memorabilia-section {
-    padding: 80px 0;
     background: transparent;
-    text-align: center;
 }
 
 .memorabilia-hero {
@@ -830,6 +751,5 @@ h4 {
     color: var(--text-color-secondary);
     font-size: 0.9rem;
     font-style: italic;
-    text-align: center;
     margin: 20px 0 0;
 }
