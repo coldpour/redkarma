@@ -30,7 +30,8 @@ body {
     font-family: 'Helvetica Neue', Arial, sans-serif;
     line-height: 1.6;
     color: #333;
-    background: black;
+    background: linear-gradient(180deg, #000, var(--mid-grey), var(--footer-color));
+    min-height: 100vh;
 }
 
 section {
@@ -631,7 +632,7 @@ h4 {
 
 .footer {
     padding: 30px 0;
-    background: var(--footer-color);
+    background: transparent;
     border-top: 1px solid rgba(var(--primary-color-rgb), 0.2);
 }
 
@@ -779,13 +780,13 @@ h4 {
 
 .memorabilia-section {
     padding: 80px 0;
-    background: linear-gradient(180deg, var(--mid-grey), var(--footer-color));
+    background: transparent;
     text-align: center;
 }
 
 .memorabilia-hero {
     padding: 60px 0 80px;
-    background: linear-gradient(180deg, #000, var(--footer-color));
+    background: transparent;
 }
 
 .btn-primary {
