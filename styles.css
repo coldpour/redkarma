@@ -701,6 +701,72 @@ h4 {
     }
 }
 
+.event-info {
+    padding: 80px 0 60px;
+    background: linear-gradient(180deg, #000, var(--mid-grey));
+    text-align: center;
+}
+
+.event-date {
+    color: rgba(var(--primary-color-rgb), 1);
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.tickets-section {
+    padding: 80px 0;
+    background: var(--mid-grey);
+    text-align: center;
+}
+
+.tickets-section .text {
+    margin-bottom: 40px;
+}
+
+.btn-primary {
+    font-size: 1.1rem;
+    padding: 16px 48px;
+}
+
+.memorabilia-section {
+    padding: 80px 0;
+    background: linear-gradient(180deg, var(--mid-grey), var(--footer-color));
+    text-align: center;
+}
+
+.memorabilia-section .text {
+    margin-bottom: 40px;
+}
+
+.memorabilia-wrapper {
+    max-width: 600px;
+    margin: 0 auto 30px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(var(--primary-color-rgb), 0.3);
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.memorabilia-wrapper:hover {
+    border-color: rgba(var(--primary-color-rgb), 0.6);
+    box-shadow: 0 0 30px rgba(var(--primary-color-rgb), 0.4);
+    transform: scale(1.02);
+}
+
 .stocking-stuffer {
     width: 100%;
+    display: block;
+    border-radius: 8px;
+}
+
+.disclaimer {
+    color: var(--text-color-tertiary);
+    font-size: 0.9rem;
+    font-style: italic;
+    text-align: center;
+    margin-top: 20px;
 }
