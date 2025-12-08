@@ -696,6 +696,10 @@ h4 {
 }
 
 @media (max-width: 480px) {
+    .container {
+        padding: 0 15px;
+    }
+
     .shows, .subscribe {
         padding: 50px 0;
     }
@@ -709,48 +713,85 @@ h4 {
         max-width: 90%;
     }
 
-    .event-info .text,
-    .tickets-section .text,
     .memorabilia-section .text {
         text-wrap: balance;
         max-width: 85%;
     }
+
+    .memorabilia-hero {
+        padding: 30px 0 50px;
+    }
+
+    .memorabilia-hero h2 {
+        font-size: 1.8rem;
+        margin-bottom: 10px;
+    }
+
+    .memorabilia-section .text {
+        margin-bottom: 20px;
+        font-size: 1rem;
+    }
+
+    .memorabilia-wrapper {
+        margin-bottom: 15px;
+        max-width: 100%;
+    }
+
+    .disclaimer {
+        font-size: 0.8rem;
+        margin-top: 10px;
+        text-wrap: balance;
+    }
+
+    .btn-primary {
+        margin-top: 20px;
+    }
 }
 
-.event-info {
-    padding: 80px 0 60px;
-    background: linear-gradient(180deg, #000, var(--mid-grey));
-    text-align: center;
-}
+@media (max-width: 390px) {
+    .memorabilia-hero {
+        padding: 20px 0 40px;
+    }
 
-.event-date {
-    color: rgba(var(--primary-color-rgb), 1);
-    font-size: 1.5rem;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    margin-bottom: 20px;
-}
+    .memorabilia-hero h2 {
+        font-size: 1.6rem;
+        margin-bottom: 8px;
+    }
 
-.tickets-section {
-    padding: 80px 0;
-    background: var(--mid-grey);
-    text-align: center;
-}
+    .memorabilia-section .text {
+        margin-bottom: 15px;
+        font-size: 0.95rem;
+    }
 
-.tickets-section .text {
-    margin-bottom: 40px;
-}
+    .memorabilia-wrapper {
+        margin-bottom: 10px;
+    }
 
-.btn-primary {
-    font-size: 1.1rem;
-    padding: 16px 48px;
+    .disclaimer {
+        font-size: 0.75rem;
+        margin-top: 8px;
+    }
+
+    .btn-primary {
+        margin-top: 18px;
+    }
 }
 
 .memorabilia-section {
     padding: 80px 0;
     background: linear-gradient(180deg, var(--mid-grey), var(--footer-color));
     text-align: center;
+}
+
+.memorabilia-hero {
+    padding: 60px 0 80px;
+    background: linear-gradient(180deg, #000, var(--footer-color));
+}
+
+.btn-primary {
+    font-size: 1.1rem;
+    padding: 16px 48px;
+    margin-top: 30px;
 }
 
 .memorabilia-section .text {
@@ -785,9 +826,9 @@ h4 {
 }
 
 .disclaimer {
-    color: var(--text-color-tertiary);
+    color: var(--text-color-secondary);
     font-size: 0.9rem;
     font-style: italic;
     text-align: center;
-    margin-top: 20px;
+    margin: 20px 0 0;
 }
