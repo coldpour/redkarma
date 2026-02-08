@@ -339,6 +339,14 @@ h4 {
     gap: 20px;
 }
 
+.shows:not(.past) .show-item.is-past {
+    display: none;
+}
+
+.shows.past .show-item.is-future {
+    display: none;
+}
+
 .show-item {
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(var(--primary-color-rgb), 0.3);
