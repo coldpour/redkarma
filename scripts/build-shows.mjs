@@ -56,10 +56,10 @@ function parseShows(text) {
   });
 }
 
-function renderShow(show, indent) {
+function renderShow(show, indent, includeLink) {
   const monthLabel = MONTHS[show.month - 1];
   const dayLabel = String(show.day);
-  const showAction = show.link
+  const showAction = includeLink && show.link
     ? `\n${indent}    <div class="show-action">\n${indent}        <a href="${escapeHtml(show.link)}" class="btn">Details</a>\n${indent}    </div>`
     : '';
 
@@ -97,11 +97,14 @@ function injectShows(filePath, showsHtml) {
 }
 
 const showsText = fs.readFileSync(SHOWS_PATH, 'utf8');
-const shows = parseShows(showsText).sort((a, b) => a.date.localeCompare(b.date));
+const shows = parseShows(showsText);
+const showsAsc = [...shows].sort((a, b) => a.date.localeCompare(b.date));
+const showsDesc = [...shows].sort((a, b) => b.date.localeCompare(a.date));
 const indent = '            ';
-const showsHtml = shows.map((show) => renderShow(show, indent)).join('\n\n');
+const indexHtml = showsAsc.map((show) => renderShow(show, indent, true)).join('\n\n');
+const showsHtml = showsDesc.map((show) => renderShow(show, indent, false)).join('\n\n');
 
-injectShows(INDEX_PATH, showsHtml);
+injectShows(INDEX_PATH, indexHtml);
 injectShows(SHOWS_HTML_PATH, showsHtml);
 
 console.log(`Built ${shows.length} shows into index.html and shows.html`);
