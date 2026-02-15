@@ -7,6 +7,7 @@ https://events.theatreconcertconsulting.com/red-karma-2/?fbclid=IwY2xjawOi82xleH
 Quil Ceda Creek Casino
 Marysville, WA
 https://www.everythingtulalip.com/entertainment/calendar/?_events_type=event&_sort_by=start_date&_search=red%20karma&_event_venue=quil-ceda-creek
+cta=details
 
 2026-02-28
 Lincoln Theatre
@@ -17,6 +18,7 @@ https://app.arts-people.com/?show=312040
 Tulalip Resort Casino
 Tulalip, WA
 https://www.everythingtulalip.com/entertainment/calendar/?_events_type=event&_sort_by=start_date&_search=Red%20karma
+cta=details
 
 2026-01-09
 Tim's Tavern

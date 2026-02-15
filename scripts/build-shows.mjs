@@ -30,11 +30,11 @@ function parseShows(text) {
       .map((line) => line.trim())
       .filter(Boolean);
 
-    if (lines.length < 3 || lines.length > 4) {
-      throw new Error(`Invalid show block at #${index + 1}: expected 3-4 lines, got ${lines.length}`);
+    if (lines.length < 3 || lines.length > 5) {
+      throw new Error(`Invalid show block at #${index + 1}: expected 3-5 lines, got ${lines.length}`);
     }
 
-    const [date, venue, location, link] = lines;
+    const [date, venue, location, ...optionalLines] = lines;
     if (!/^\d{4}-\d{2}-\d{2}$/.test(date)) {
       throw new Error(`Invalid date "${date}" in block #${index + 1}`);
     }
@@ -42,6 +42,27 @@ function parseShows(text) {
     const [year, month, day] = date.split('-').map((part) => Number(part));
     if (!month || month < 1 || month > 12 || !day || day < 1 || day > 31) {
       throw new Error(`Invalid date "${date}" in block #${index + 1}`);
+    }
+
+    let link = '';
+    let cta = 'tickets';
+
+    optionalLines.forEach((line) => {
+      if (line.startsWith('cta=')) {
+        cta = line.slice(4).trim().toLowerCase();
+        return;
+      }
+
+      if (!link) {
+        link = line;
+        return;
+      }
+
+      throw new Error(`Invalid show block at #${index + 1}: unexpected line "${line}"`);
+    });
+
+    if (!['tickets', 'details'].includes(cta)) {
+      throw new Error(`Invalid cta "${cta}" in block #${index + 1}: expected tickets or details`);
     }
 
     return {
@@ -52,6 +73,7 @@ function parseShows(text) {
       venue,
       location,
       link,
+      cta,
     };
   });
 }
@@ -59,8 +81,9 @@ function parseShows(text) {
 function renderShow(show, indent, includeLink) {
   const monthLabel = MONTHS[show.month - 1];
   const dayLabel = String(show.day);
+  const ctaLabel = show.cta === 'details' ? 'Details' : 'Get Tickets';
   const showAction = includeLink && show.link
-    ? `\n${indent}    <div class="show-action">\n${indent}        <a href="${escapeHtml(show.link)}" class="btn">Details</a>\n${indent}    </div>`
+    ? `\n${indent}    <div class="show-action">\n${indent}        <a href="${escapeHtml(show.link)}" class="btn">${ctaLabel}</a>\n${indent}    </div>`
     : '';
 
   return [
