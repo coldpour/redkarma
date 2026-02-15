@@ -25,10 +25,10 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '25'
 
       - name: Build shows
-        run: node scripts/build-shows.mjs
+        run: npm run build
 
       - name: Commit changes
         run: |

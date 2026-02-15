@@ -420,6 +420,25 @@ h4 {
     flex: 1;
 }
 
+.show-action {
+    align-items: center;
+    display: flex;
+    justify-content: flex-end;
+    min-width: 220px;
+}
+
+.show-action .btn {
+    text-align: center;
+}
+
+.show-action .btn.btn-tickets {
+    min-width: 190px;
+}
+
+.show-action.show-action-placeholder {
+    visibility: hidden;
+}
+
 .show-details .venue {
     color: var(--text-color-primary);
     font-size: 1.5rem;
@@ -633,6 +652,11 @@ h4 {
     .show-action {
         width: 100%;
         max-width: 300px;
+        min-width: 0;
+    }
+
+    .show-action.show-action-placeholder {
+        display: none;
     }
 
     .show-action .btn {

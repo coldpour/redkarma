@@ -82,9 +82,14 @@ function renderShow(show, indent, includeLink) {
   const monthLabel = MONTHS[show.month - 1];
   const dayLabel = String(show.day);
   const ctaLabel = show.cta === 'details' ? 'Details' : 'Get Tickets';
-  const showAction = includeLink && show.link
-    ? `\n${indent}    <div class="show-action">\n${indent}        <a href="${escapeHtml(show.link)}" class="btn">${ctaLabel}</a>\n${indent}    </div>`
-    : '';
+  const ctaClass = show.cta === 'details' ? 'btn-details' : 'btn-tickets';
+  let showAction = '';
+
+  if (includeLink && show.link) {
+    showAction = `\n${indent}    <div class="show-action">\n${indent}        <a href="${escapeHtml(show.link)}" class="btn ${ctaClass}">${ctaLabel}</a>\n${indent}    </div>`;
+  } else if (includeLink) {
+    showAction = `\n${indent}    <div class="show-action show-action-placeholder" aria-hidden="true"></div>`;
+  }
 
   return [
     `${indent}<div class="show-item" data-date="${show.date}">`,
