@@ -80,6 +80,22 @@ function renderShow(show, indent, includeLink) {
     .join('\n');
 }
 
+function renderPastShows(shows, indent) {
+  const rendered = [];
+  let activeYear = null;
+
+  shows.forEach((show) => {
+    if (activeYear !== null && show.year !== activeYear) {
+      rendered.push(`${indent}<h3 class="past-year-header">${show.year}</h3>`);
+    }
+
+    rendered.push(renderShow(show, indent, false));
+    activeYear = show.year;
+  });
+
+  return rendered.join('\n\n');
+}
+
 function injectShows(filePath, showsHtml) {
   const start = '<!-- SHOWS_START -->';
   const end = '<!-- SHOWS_END -->';
@@ -102,7 +118,7 @@ const showsAsc = [...shows].sort((a, b) => a.date.localeCompare(b.date));
 const showsDesc = [...shows].sort((a, b) => b.date.localeCompare(a.date));
 const indent = '            ';
 const indexHtml = showsAsc.map((show) => renderShow(show, indent, true)).join('\n\n');
-const showsHtml = showsDesc.map((show) => renderShow(show, indent, false)).join('\n\n');
+const showsHtml = renderPastShows(showsDesc, indent);
 
 injectShows(INDEX_PATH, indexHtml);
 injectShows(SHOWS_HTML_PATH, showsHtml);
