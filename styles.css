@@ -285,13 +285,23 @@ h4 {
     background: url('glitter.jpg') repeat;
 }
 
+.past-hero-link {
+    color: inherit;
+    display: block;
+    text-decoration: none;
+}
+
 .past-shows-link-container {
     text-align: right;
     margin-top: 20px;
 }
 
 .other-shows-link-container {
-    margin-top: 20px;
+    margin-top: 40px;
+}
+
+.booking.past .other-shows-link-container {
+    text-align: center;
 }
 
 .past-shows-link {
@@ -336,10 +346,20 @@ h4 {
     transform: translateX(10px);
 }
 
+.shows-link.shows-link-back:hover {
+    transform: translateX(-10px);
+}
+
 .chevron-icon {
     stroke: currentColor;
     vertical-align: middle;
     margin-left: 2px;
+}
+
+.chevron-icon-left {
+    margin-left: 0;
+    margin-right: 2px;
+    transform: scaleX(-1);
 }
 
 .shows-list {
