@@ -33,6 +33,58 @@ body {
     min-height: 100vh;
 }
 
+.sparkle-trail-layer {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 9999;
+}
+
+.sparkle-trail-particle {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: var(--sparkle-size, 10px);
+    height: var(--sparkle-size, 10px);
+    opacity: 0;
+    border-radius: 2px;
+    background:
+        radial-gradient(circle at center, rgba(255,255,255,0.95) 0 28%, transparent 29%),
+        linear-gradient(90deg, transparent 40%, rgba(var(--primary-color-rgb), 0.95) 49%, rgba(255,255,255,0.95) 50%, rgba(var(--primary-color-rgb), 0.95) 51%, transparent 60%),
+        linear-gradient(0deg, transparent 40%, rgba(var(--primary-color-rgb), 0.95) 49%, rgba(255,255,255,0.95) 50%, rgba(var(--primary-color-rgb), 0.95) 51%, transparent 60%);
+    filter: drop-shadow(0 0 6px rgba(var(--primary-color-rgb), 0.7));
+    transform: translate(-50%, -50%) rotate(0deg) scale(0.25);
+    animation: sparkle-trail-pop 700ms ease-out forwards;
+    will-change: transform, opacity;
+}
+
+@keyframes sparkle-trail-pop {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -50%) rotate(0deg) scale(0.2);
+    }
+    15% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform:
+            translate(
+                calc(-50% + var(--sparkle-drift-x, 0px)),
+                calc(-50% + var(--sparkle-drift-y, 0px))
+            )
+            rotate(var(--sparkle-rotate, 0deg))
+            scale(1.2);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .sparkle-trail-layer {
+        display: none;
+    }
+}
+
 section {
     padding: 60px 0;
     text-align: center;
