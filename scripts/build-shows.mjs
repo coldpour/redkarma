@@ -4,7 +4,7 @@ import path from 'node:path';
 const ROOT = process.cwd();
 const SHOWS_PATH = path.join(ROOT, 'shows.txt');
 const INDEX_PATH = path.join(ROOT, 'index.html');
-const SHOWS_HTML_PATH = path.join(ROOT, 'shows.html');
+const PAST_SHOWS_PATH = path.join(ROOT, 'past.html');
 
 const MONTHS = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'];
 
@@ -149,6 +149,6 @@ const indexHtml = showsAsc.map((show) => renderShow(show, indent, true)).join('\
 const showsHtml = renderPastShows(showsDesc, indent);
 
 injectShows(INDEX_PATH, indexHtml);
-injectShows(SHOWS_HTML_PATH, showsHtml);
+injectShows(PAST_SHOWS_PATH, showsHtml);
 
-console.log(`Built ${shows.length} shows into index.html and shows.html`);
+console.log(`Built ${shows.length} shows into index.html and past.html`);
