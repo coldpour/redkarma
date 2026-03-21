@@ -1,0 +1,33 @@
+name: Mailchimp Signup Monitor
+
+on:
+  schedule:
+    - cron: '17 9 * * *'
+  workflow_dispatch:
+
+jobs:
+  healthcheck:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install Playwright Chromium
+        run: |
+          npm install --no-save playwright
+          npx playwright install --with-deps chromium
+
+      - name: Run browser-driven Mailchimp signup health check
+        env:
+          MAILCHIMP_API_KEY: ${{ secrets.MAILCHIMP_API_KEY }}
+          MAILCHIMP_SERVER_PREFIX: ${{ secrets.MAILCHIMP_SERVER_PREFIX }}
+          MAILCHIMP_AUDIENCE_ID: ${{ secrets.MAILCHIMP_AUDIENCE_ID }}
+          MAILCHIMP_HEALTHCHECK_EMAIL_DOMAIN: ${{ secrets.MAILCHIMP_HEALTHCHECK_EMAIL_DOMAIN }}
+          PROD_SIGNUP_URL: ${{ secrets.PROD_SIGNUP_URL }}
+        run: node scripts/mailchimp-healthcheck.mjs
