@@ -8,6 +8,7 @@ on:
 jobs:
   healthcheck:
     runs-on: ubuntu-latest
+    environment: healthcheck
     timeout-minutes: 15
     steps:
       - name: Checkout
