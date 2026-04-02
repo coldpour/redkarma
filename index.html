@@ -405,43 +405,31 @@
     <div class="container">
         <h2>Stay Stay Stay</h2>
         <p class="subscribe-text">If you're in, you're in. Subscribe for the good stuff.</p>
-        <form class="email-form" id="myForm" action="">
-            <input type="text" name="b_544170e9efaa8d076e050e5dd_166" tabindex="-1" value="" style="display: none;">
-            <input type="hidden" name="ht" value="2486588c90f14280f2aa7b6e800b69148aa516d0:MTc2MzQ0NDk1MC42NzM2">
-            <input type="email" name="EMAIL" placeholder="Enter your email address" required id="mc-EMAIL">
-            <button type="submit" class="btn btn-submit">Subscribe</button>
-        </form>
+
+        <div id="mc_embed_shell">
+            <div id="mc_embed_signup">
+                <form action="https://gmail.us22.list-manage.com/subscribe/post?u=544170e9efaa8d076e050e5dd&amp;id=02305571fe&amp;f_id=0098c2e1f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_self" novalidate="">
+                    <div id="mc_embed_signup_scroll">
+                        <div class="mc-field-group"><input type="email" name="EMAIL" class="required email" id="mce-EMAIL" required="" placeholder="Enter your email address" value=""></div>
+                        <div id="mce-responses" class="clear foot">
+                            <div class="response" id="mce-error-response" style="display: none;"></div>
+                            <div class="response" id="mce-success-response" style="display: none;"></div>
+                        </div>
+                        <div aria-hidden="true" style="position: absolute; left: -5000px;">
+                            /* real people should not fill this in and expect good things - do not remove this or risk form bot signups */
+                            <input type="text" name="b_544170e9efaa8d076e050e5dd_02305571fe" tabindex="-1" value="">
+                        </div>
+                        <div class="optionalParent">
+                            <div class="clear foot">
+                                <input type="submit" name="subscribe" id="mc-embedded-subscribe" class="button" value="Subscribe">
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
 </section>
-<script>
-    const myForm = document.getElementById('myForm');
-
-    myForm.addEventListener('submit', async (event) => {
-        event.preventDefault();
-        const formData = new FormData(myForm);
-
-        try {
-            await fetch('https://mc.us22.list-manage.com/subscribe/landing-page?u=544170e9efaa8d076e050e5dd&id=02305571fe&f_id=00e6c2e1f0', {
-                method: 'POST',
-                body: formData
-            });
-        } catch (error) {
-            // ignore the CORS error. Assume submission was successful.
-            const btn = document.querySelector('.btn-submit');
-            const initialText = btn.textContent;
-            const pText = document.querySelector('.subscribe-text').innerHTML;
-            btn.classList.add('success');
-            btn.textContent = "You're in!";
-            document.getElementById('mc-EMAIL').value = '';
-            document.querySelector('.subscribe-text').innerHTML = 'You just earned some Karma!';
-            setTimeout(() => {
-                btn.classList.remove('success');
-                btn.textContent = initialText;
-                document.querySelector('.subscribe-text').innerHTML = pText;
-            }, 3000);
-        }
-    });
-</script>
 
 <section id="social" class="social">
     <div class="social-links">

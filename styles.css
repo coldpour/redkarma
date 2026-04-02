@@ -557,15 +557,28 @@ h4 {
     padding: 80px 0 30px;
 }
 
-.email-form {
+#mc-embedded-subscribe-form {
     display: flex;
     max-width: 600px;
     margin: 0 auto;
-    gap: 10px;
 }
 
-.email-form input[type="email"] {
+#mc_embed_signup_scroll {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+}
+
+#mc_embed_signup_scroll .mc-field-group {
     flex: 1;
+    min-width: 0;
+}
+
+#mc-embedded-subscribe-form #mce-EMAIL {
+    flex: 1;
+    width: 100%;
     padding: 15px 20px;
     background: rgba(255, 255, 255, 0.1);
     border: 1px solid rgba(var(--primary-color-rgb), 0.3);
@@ -576,16 +589,21 @@ h4 {
     transition: all 0.3s ease;
 }
 
-.email-form input[type="email"]::placeholder {
+#mc-embedded-subscribe-form #mce-EMAIL::placeholder {
     color: var(--text-color-tertiary);
 }
 
-.email-form input[type="email"]:focus {
+#mc-embedded-subscribe-form #mce-EMAIL:focus {
     border-color: rgba(var(--primary-color-rgb), 1);
     background: rgba(255, 255, 255, 0.15);
 }
 
-.email-form .btn-submit {
+#mc_embed_signup_scroll .optionalParent,
+#mc_embed_signup_scroll .foot {
+    display: contents;
+}
+
+#mc-embedded-subscribe {
     padding: 15px 40px;
     background: rgba(var(--primary-color-rgb), 1);
     color: var(--text-color-primary);
@@ -598,20 +616,10 @@ h4 {
     transition: all 0.3s ease;
 }
 
-.email-form .btn-submit:hover {
+#mc-embedded-subscribe:hover {
     background: rgba(var(--primary-color-hover-rgb), 1);
     box-shadow: 0 0 20px rgba(var(--primary-color-rgb), 0.6);
     transform: scale(1.05);
-}
-
-.email-form .btn-submit.success {
-    background: rgba(var(--success-color-rgb), 1);
-}
-
-.email-form .btn-submit.success:hover {
-    background: rgba(var(--success-color-rgb), 1);
-    box-shadow: none;
-    transform: scale(1.0);
 }
 
 .social {
@@ -716,12 +724,18 @@ h4 {
         width: 100%;
     }
 
-    .email-form {
-        flex-direction: column;
+    #mc-embedded-subscribe-form {
         padding: 0 20px;
     }
 
-    .email-form .btn-submit {
+    #mc_embed_signup_scroll {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    #mc_embed_signup_scroll .mc-field-group,
+    #mc-embedded-subscribe,
+    #mc-embedded-subscribe-form #mce-EMAIL {
         width: 100%;
     }
 
