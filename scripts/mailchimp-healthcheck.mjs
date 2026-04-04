@@ -64,13 +64,13 @@ async function submitViaBrowser() {
   try {
     await page.goto(PROD_SIGNUP_URL, { waitUntil: 'domcontentloaded', timeout: 60000 });
 
-    const form = page.locator('form#myForm, form.email-form').first();
+    const form = page.locator('form#mc-embedded-subscribe-form, form#myForm, form.email-form'). first();
     await form.waitFor({ timeout: 15000 });
 
-    const emailInput = page.locator('form#myForm input[type="email"], form.email-form input[type="email"]').first();
+    const emailInput = page.locator('input[type="email"], input[name="EMAIL"], #mce-EMAIL').first();
     await emailInput.fill(testEmail);
 
-    const submitButton = page.locator('form#myForm button[type="submit"], form.email-form button[type="submit"]').first();
+    const submitButton = page.locator('button[type="submit"], input[type="submit" ], #mc-embedded-subscribe').first();
     await submitButton.click();
 
     await page.waitForTimeout(1500);
