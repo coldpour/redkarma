@@ -1,5 +1,6 @@
 import crypto from 'node:crypto';
 import { chromium } from 'playwright';
+import { expect } from '@playwright/test';
 
 function getRequiredEnv(name) {
   const value = process.env[name];
@@ -58,13 +59,13 @@ async function archiveMember() {
 }
 
 async function submitViaBrowser() {
-  const browser = await chromium.launch({ headless: true });
+  const browser = await chromium.launch({ headless: false });
   const page = await browser.newPage();
 
   try {
     await page.goto(PROD_SIGNUP_URL, { waitUntil: 'domcontentloaded', timeout: 60000 });
 
-    const form = page.locator('form#mc-embedded-subscribe-form, form#myForm, form.email-form'). first();
+    const form = page.locator('form#mc-embedded-subscribe-form, form#myForm, form.email-form').first();
     await form.waitFor({ timeout: 15000 });
 
     const emailInput = page.locator('input[type="email"], input[name="EMAIL"], #mce-EMAIL').first();
@@ -72,9 +73,13 @@ async function submitViaBrowser() {
 
     const submitButton = page.locator('button[type="submit"], input[type="submit" ], #mc-embedded-subscribe').first();
     await submitButton.click();
+    
+    await expect(page).toHaveURL(/https:\/\/gmail.us22.list-manage.com\/subscribe\/post/)
+    await expect(page.getByText('Your subscription to our list has been confirmed.')).toBeVisible();
 
-    await page.waitForTimeout(1500);
     console.log('Submitted signup form via production website.');
+  } catch (e) {
+    console.error(e.message);
   } finally {
     await browser.close();
   }
