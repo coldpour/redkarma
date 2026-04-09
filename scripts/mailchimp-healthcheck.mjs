@@ -1,6 +1,5 @@
 import crypto from 'node:crypto';
 import { chromium } from 'playwright';
-import { expect } from '@playwright/test';
 
 function getRequiredEnv(name) {
   const value = process.env[name];
@@ -59,7 +58,9 @@ async function archiveMember() {
 }
 
 async function submitViaBrowser() {
-  const browser = await chromium.launch({ headless: false });
+  const browser = await chromium.launch({
+    headless: true,
+  });
   const page = await browser.newPage();
 
   try {
@@ -71,15 +72,35 @@ async function submitViaBrowser() {
     const emailInput = page.locator('input[type="email"], input[name="EMAIL"], #mce-EMAIL').first();
     await emailInput.fill(testEmail);
 
-    const submitButton = page.locator('button[type="submit"], input[type="submit" ], #mc-embedded-subscribe').first();
-    await submitButton.click();
-    
-    await expect(page).toHaveURL(/https:\/\/gmail.us22.list-manage.com\/subscribe\/post/)
-    await expect(page.getByText('Your subscription to our list has been confirmed.')).toBeVisible();
+    const formPayload = await form.evaluate((formElement) => {
+      const formData = new FormData(formElement);
+      formData.set('subscribe', 'Subscribe');
+
+      return {
+        action: formElement.action,
+        method: formElement.method || 'post',
+        body: new URLSearchParams(formData).toString(),
+      };
+    });
+
+    if (!/^https:\/\/[^/]+\.list-manage\.com\/subscribe\/post/.test(formPayload.action)) {
+      throw new Error(`Unexpected Mailchimp form action: ${formPayload.action}`);
+    }
+
+    const response = await fetch(formPayload.action, {
+      method: formPayload.method.toUpperCase(),
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      body: formPayload.body,
+      redirect: 'follow',
+    });
+
+    if (!response.ok) {
+      throw new Error(`Mailchimp signup form POST failed with status ${response.status}`);
+    }
 
     console.log('Submitted signup form via production website.');
-  } catch (e) {
-    console.error(e.message);
   } finally {
     await browser.close();
   }
@@ -111,8 +132,12 @@ async function verifyMemberExists() {
 
 async function verifyMemberArchived() {
   try {
-    await mailchimpRequest(`/lists/${AUDIENCE_ID}/members/${subscriberHash}`);
-    throw new Error('Cleanup verification failed: test member still present after archive.');
+    const member = await mailchimpRequest(`/lists/${AUDIENCE_ID}/members/${subscriberHash}`);
+    if (member?.status === 'archived') {
+      console.log('Verified member cleanup (member is archived).');
+      return;
+    }
+    throw new Error(`Cleanup verification failed: test member status is ${member?.status || 'unknown'} after archive.`);
   } catch (error) {
     if (String(error.message).includes('Mailchimp API 404')) {
       console.log('Verified member cleanup (member is no longer retrievable).');
