@@ -1,24 +1,10 @@
-2026-05-23
-Angel Of The Winds Casino Resort
-Arlington, WA
+2026-11-14
+The Historic Everett Theatre
+Everett, WA
 
-2026-05-02 
-Private Event
-Shoreline, WA
-
-2026-07-14
-Concerts on the Green
-Issaquah, WA
-https://www.issaquahwa.gov/777/Concerts-on-the-Green
-cta=details
-
-2026-07-25 
-Private Event
-San Juan Island, WA
-
-2026-08-21
-Farmstrong
-Mt. Vernon, WA
+2026-10-29
+Quil Ceda Creek Casino
+Marysville, WA
 
 2026-09-12
 Chalet Theater
@@ -28,13 +14,39 @@ Enumclaw, WA
 Tulalip Resort Casino
 Tulalip, WA
 
-2026-10-29
-Quil Ceda Creek Casino
-Marysville, WA
+2026-08-21
+Farmstrong
+Mt. Vernon, WA
+
+2026-08-01
+Spanish Ballroom
+Tacoma, WA
+
+2026-07-25 
+Private Event
+San Juan Island, WA
 
 2026-07-17
 Tulalip Resort Casino
 Tulalip, WA
+
+2026-07-14
+Concerts on the Green
+Issaquah, WA
+https://www.issaquahwa.gov/777/Concerts-on-the-Green
+cta=details
+
+2026-07-08
+The District
+Lynnwood, WA
+
+2026-05-23
+Angel Of The Winds Casino Resort
+Arlington, WA
+
+2026-05-02 
+Private Event
+Shoreline, WA
 
 2026-05-01
 The Historic Everett Theatre
