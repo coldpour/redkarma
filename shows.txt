@@ -1,6 +1,4 @@
-2026-11-14
-The Historic Everett Theatre
-Everett, WA
+
 
 2026-10-29
 Quil Ceda Creek Casino
@@ -36,13 +34,11 @@ Issaquah, WA
 https://www.issaquahwa.gov/777/Concerts-on-the-Green
 cta=details
 
-2026-07-08
-The District
-Lynnwood, WA
-
 2026-05-23
 Angel Of The Winds Casino Resort
 Arlington, WA
+https://angelofthewinds.com/event/red-karma/
+cta=details
 
 2026-05-02 
 Private Event
