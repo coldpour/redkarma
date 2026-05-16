@@ -1,5 +1,3 @@
-
-
 2026-10-29
 Quil Ceda Creek Casino
 Marysville, WA
@@ -31,6 +29,12 @@ cta=details
 Concerts on the Green
 Issaquah, WA
 https://www.issaquahwa.gov/777/Concerts-on-the-Green
+cta=details
+
+2026-07-08
+Summer Sounds
+Lynnwood, WA
+https://thedistrict425.com/events/
 cta=details
 
 2026-05-23
