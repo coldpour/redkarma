@@ -206,7 +206,7 @@ h4 {
     font-family: tungsten, 'Helvetica Neue', Arial, sans-serif;
     position: relative;
     z-index: 1;
-    font-size: min(24vw, 126px);
+    font-size: min(24vw, 15vh);
     line-height: 0.85;
     letter-spacing: 0.1em;
     color: var(--text-color-primary);
@@ -552,7 +552,7 @@ h4 {
     align-items: center;
     gap: 30px;
     transition: all 0.3s ease;
-    border-radius: 8px;
+    border-radius: 20%;
 }
 
 .merch-item:hover {
@@ -563,6 +563,7 @@ h4 {
 
 .merch-item img {
     width: clamp(200px, 50vw, 400px);
+    border-radius: 40%;
 }
 
 .merch .text {
