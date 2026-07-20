@@ -233,8 +233,15 @@ h4 {
     max-height: 177.78vw;
     object-fit: cover;
     border: none;
+    border-radius: 0;
     display: block;
     margin: auto;
+}
+
+@media (min-aspect-ratio: 9/16) {
+    .hero-video {
+        border-radius: 4vh;
+    }
 }
 
 .bio {
