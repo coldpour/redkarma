@@ -218,7 +218,7 @@ h4 {
     z-index: 1;
     color: var(--text-color-primary);
     font-family: eras, serif;
-    font-size: min(9vw, 46px);
+    font-size: min(9vw, 3.7vh);
     text-transform: uppercase;
     text-shadow: 2px 2px 0 black;
     line-height: 1;
