@@ -179,39 +179,45 @@ const server = http.createServer((req, res) => {
   }
 
   const normalizedPath = requestPath === '/' ? '/index.html' : requestPath;
-  const filePath = path.resolve(ROOT, `.${normalizedPath}`);
+  const requestedFilePath = path.resolve(ROOT, `.${normalizedPath}`);
 
-  if (!filePath.startsWith(ROOT)) {
+  if (!requestedFilePath.startsWith(ROOT)) {
     res.writeHead(403);
     res.end('Forbidden');
     return;
   }
 
-  fs.readFile(filePath, (error, buffer) => {
-    if (error) {
-      if (error.code === 'ENOENT') {
-        res.writeHead(404);
-        res.end('Not Found');
+  fs.stat(requestedFilePath, (statError, stats) => {
+    const filePath = !statError && stats.isDirectory()
+      ? path.join(requestedFilePath, 'index.html')
+      : requestedFilePath;
+
+    fs.readFile(filePath, (error, buffer) => {
+      if (error) {
+        if (error.code === 'ENOENT') {
+          res.writeHead(404);
+          res.end('Not Found');
+          return;
+        }
+
+        res.writeHead(500);
+        res.end('Internal Server Error');
         return;
       }
 
-      res.writeHead(500);
-      res.end('Internal Server Error');
-      return;
-    }
+      const ext = path.extname(filePath).toLowerCase();
+      const contentType = MIME_TYPES[ext] || 'application/octet-stream';
+      res.setHeader('Cache-Control', 'no-store');
+      res.setHeader('Content-Type', contentType);
 
-    const ext = path.extname(filePath).toLowerCase();
-    const contentType = MIME_TYPES[ext] || 'application/octet-stream';
-    res.setHeader('Cache-Control', 'no-store');
-    res.setHeader('Content-Type', contentType);
+      if (ext === '.html') {
+        const html = injectLiveReload(buffer.toString('utf8'));
+        res.end(html);
+        return;
+      }
 
-    if (ext === '.html') {
-      const html = injectLiveReload(buffer.toString('utf8'));
-      res.end(html);
-      return;
-    }
-
-    res.end(buffer);
+      res.end(buffer);
+    });
   });
 });
 
