@@ -33,7 +33,7 @@
 
                     <div class="power power-splitter">POWER</div>
                     <div class="splitter">
-                        <strong>NEAT Split +<br>XR18</strong>
+                        <strong>NEAT Split<br>XR18</strong>
                         <span>IEM mixer</span>
                         <span>25-foot snake</span>
                     </div>
@@ -84,54 +84,80 @@
             <section class="panel patch-list" aria-labelledby="patch-list-title">
                 <h2 id="patch-list-title">INPUT &amp; PATCH LIST</h2>
 
-                <table>
+                <h3 class="patch-section-title">
+                    <span>NEAT SPLIT</span>
+                    <small>TO FOH + XR18</small>
+                </h3>
+
+                <table class="splitter-inputs">
                     <colgroup>
-                        <col class="patch-number">
-                        <col class="source">
-                        <col class="connection">
-                        <col class="channel">
-                        <col class="notes">
+                        <col class="split-number">
+                        <col class="split-source">
+                        <col class="split-connection">
                     </colgroup>
                     <thead>
                         <tr>
-                            <th scope="col">FOH<br>PATCH</th>
+                            <th scope="col">INPUT</th>
                             <th scope="col">SOURCE</th>
-                            <th scope="col">FOH CONNECTION</th>
-                            <th scope="col">XR18<br>CH</th>
-                            <th scope="col">IEM / NOTES</th>
+                            <th scope="col">SOURCE CONNECTION</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr class="vocals"><td>1</td><td>Vox – Ireland</td><td>Band Splitter Out 1</td><td>1</td><td>Wireless vocal</td></tr>
-                        <tr class="vocals"><td>2</td><td>Vox – Holly</td><td>Band Splitter Out 2</td><td>2</td><td>Wireless headset</td></tr>
-                        <tr class="vocals"><td>3</td><td>Vox – Mike</td><td>Band Splitter Out 3</td><td>3</td><td>Wireless vocal</td></tr>
-                        <tr class="instruments"><td>4</td><td>Acoustic Guitar – Ireland</td><td>Band Splitter Out 4</td><td>4</td><td>Wired DI</td></tr>
-                        <tr class="instruments"><td>5</td><td>Electric Guitar – Andrew</td><td>Band Splitter Out 5</td><td>5</td><td>XLR modeler</td></tr>
-                        <tr class="instruments"><td>6</td><td>Bass – Eric</td><td>Band Splitter Out 6</td><td>6</td><td>XLR modeler</td></tr>
-                        <tr class="keys-row"><td>7</td><td>Keys</td><td>Band Splitter Out 7</td><td>7</td><td>Mono</td></tr>
-                        <tr class="drums"><td>8</td><td>Kick</td><td>Band Splitter Out 8</td><td>8</td><td>House mic</td></tr>
-                        <tr class="drums"><td>9</td><td>Snare</td><td>Band Splitter Out 9</td><td>9</td><td>House mic</td></tr>
-                        <tr class="drums"><td>10</td><td>Hi-Hat</td><td>Band Splitter Out 10</td><td>10</td><td>House mic</td></tr>
-                        <tr><td>11</td><td>Tom 1</td><td>Direct to FOH</td><td>—</td><td>House mic;<br>not needed in IEM</td></tr>
-                        <tr><td>12</td><td>Tom 2</td><td>Direct to FOH</td><td>—</td><td>House mic;<br>not needed in IEM</td></tr>
-                        <tr><td>13</td><td>Overhead L</td><td>Direct to FOH</td><td>—</td><td>House mic;<br>not needed in IEM</td></tr>
-                        <tr><td>14</td><td>Overhead R</td><td>Direct to FOH</td><td>—</td><td>House mic;<br>not needed in IEM</td></tr>
-                        <tr><td>15</td><td>Tracks</td><td>XR18 Main Out → FOH</td><td>—</td><td>Mono</td></tr>
-                        <tr class="cues"><td>—</td><td>Cue – Andrew</td><td>Not sent to FOH</td><td>12</td><td>IEM cue only</td></tr>
-                        <tr class="cues"><td>—</td><td>Cue – Eric</td><td>Not sent to FOH</td><td>13</td><td>IEM cue only</td></tr>
-                        <tr class="cues"><td>—</td><td>Cue – Ireland</td><td>Not sent to FOH</td><td>14</td><td>IEM cue only</td></tr>
-                        <tr class="cues"><td>—</td><td>Cue – Mike</td><td>Not sent to FOH</td><td>15</td><td>IEM cue only</td></tr>
-                        <tr class="cues"><td>—</td><td>Cue – Holly</td><td>Not sent to FOH</td><td>16</td><td>IEM cue only</td></tr>
+                        <tr class="vocals"><td>1</td><td>Vox – Ireland</td><td>Wireless vocal</td></tr>
+                        <tr class="vocals"><td>2</td><td>Vox – Holly</td><td>Wireless headset</td></tr>
+                        <tr class="vocals"><td>3</td><td>Vox – Mike</td><td>Wireless vocal</td></tr>
+                        <tr class="instruments"><td>4</td><td>Acoustic Guitar – Ireland</td><td>Wired DI</td></tr>
+                        <tr class="instruments"><td>5</td><td>Electric Guitar – Andrew</td><td>XLR modeler</td></tr>
+                        <tr class="instruments"><td>6</td><td>Bass – Eric</td><td>XLR modeler</td></tr>
+                        <tr class="keys-row"><td>7</td><td>Synth</td><td>Mono</td></tr>
+                        <tr class="unused"><td>8</td><td>SKIP — OPEN</td><td>DO NOT CONNECT</td></tr>
+                        <tr class="drums"><td>9</td><td>Kick</td><td>House mic</td></tr>
+                        <tr class="drums"><td>10</td><td>Snare</td><td>House mic</td></tr>
+                        <tr class="drums"><td>11</td><td>Hi-Hat</td><td>House mic</td></tr>
+                        <tr class="unused"><td>12–16</td><td>SKIP — OPEN</td><td>DO NOT CONNECT</td></tr>
                     </tbody>
                 </table>
 
-                <p class="signal-flow">
-                    <strong>Signal flow:</strong> Inputs 1–10 → Band 16-ch analog splitter → FOH + XR18.<br>
-                    Tom 1, Tom 2, OH L and OH R → direct to FOH only.<br>
-                    Tracks → mono XR18 Main Out → FOH.<br>
-                    Cue channels 12–16 are internal to the band’s XR18/IEM system and<br class="landscape-only">
-                    require no FOH connection.
-                </p>
+                <div class="patch-subtables">
+                    <div class="patch-subsection">
+                        <h3>
+                            <span>DIRECT TO FOH</span>
+                            <small>HOUSE SETUP</small>
+                        </h3>
+                        <table class="direct-foh">
+                            <thead>
+                                <tr><th scope="col">SOURCE</th><th scope="col">FOH CONNECTION</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Tom 1</td><td>House mic → any FOH input</td></tr>
+                                <tr><td>Tom 2</td><td>House mic → any FOH input</td></tr>
+                                <tr><td>Overhead L</td><td>House mic → any FOH input</td></tr>
+                                <tr><td>Overhead R</td><td>House mic → any FOH input</td></tr>
+                                <tr class="tracks"><td>Tracks</td><td>Mono XR18 Main Out → FOH</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="patch-subsection iem-outputs">
+                        <h3>
+                            <span>XR18 IEM AUX OUTS</span>
+                            <small>BAND SETUP</small>
+                        </h3>
+                        <table>
+                            <thead>
+                                <tr><th scope="col">AUX</th><th scope="col">DESTINATION TRANSMITTER</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>1</td><td>Andrew</td></tr>
+                                <tr class="unused"><td>2</td><td>SKIP — OPEN</td></tr>
+                                <tr><td>3</td><td>Ireland</td></tr>
+                                <tr><td>4</td><td>Holly</td></tr>
+                                <tr><td>5</td><td>Mike</td></tr>
+                                <tr><td>6</td><td>Eric</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
             </section>
         </div>
 
@@ -139,46 +165,42 @@
             <h2 id="production-notes-title">PRODUCTION NOTES</h2>
 
             <div class="notes-grid">
-                <div>
-                    <h3>HOUSE PROVIDES</h3>
-                    <ol>
-                        <li>FOH Console and PA</li>
-                        <li>All Stage XLR Cables</li>
-                        <li>Drum Microphones Stands and cables</li>
-                        <li>Power at bass and drums</li>
-                    </ol>
+                <div class="notes-column notes-column-house">
+                    <div class="note-group note-house">
+                        <h3>HOUSE PROVIDES</h3>
+                        <ol>
+                            <li>FOH Console and PA</li>
+                            <li>All Stage XLR Cables</li>
+                            <li>Drum Microphones Stands and cables</li>
+                            <li>Power at bass and drums</li>
+                            <li>HDMI cable to Holly’s position for slideshow control</li>
+                            <li>Projector and screen</li>
+                        </ol>
+                    </div>
+
                 </div>
 
-                <div>
-                    <h3>BAND PROVIDES</h3>
-                    <ol>
-                        <li>Wireless Vocal Microphones and clips</li>
-                        <li>Passive analog splitter (16 ch)</li>
-                        <li>XR18 for personal IEM mixing</li>
-                        <li>Wired acoustic DI</li>
-                        <li>XLR guitar and bass output</li>
-                        <li>Mono keys and mono tracks playback</li>
-                    </ol>
-                </div>
+                <div class="notes-column notes-column-band">
+                    <div class="note-group note-band">
+                        <h3>BAND PROVIDES</h3>
+                        <ol>
+                            <li>Wireless Vocal Microphones and clips</li>
+                            <li>Passive analog splitter (16 ch)</li>
+                            <li>XR18 for personal IEM mixing</li>
+                            <li>Wired acoustic DI</li>
+                            <li>XLR guitar and bass output</li>
+                            <li>Mono keys and mono tracks playback</li>
+                        </ol>
+                    </div>
 
-                <div>
-                    <h3>MONITORING / POWER</h3>
-                    <ol>
-                        <li>No monitor mixes required from FOH</li>
-                        <li>Only listed channels need split</li>
-                        <li>Backup wedge appreciated, not required</li>
-                        <li>Power at bass and drums</li>
-                        <li>Band provides splitter and XR18 power</li>
-                    </ol>
-                </div>
-
-                <div>
-                    <h3>TIMING</h3>
-                    <ol>
-                        <li>90 min load in before sound check</li>
-                        <li>30 min soundcheck</li>
-                        <li>Line check, then 2 songs to dial in mix</li>
-                    </ol>
+                    <div class="note-group note-timing">
+                        <h3>TIMING</h3>
+                        <ol>
+                            <li>90 min load in before sound check</li>
+                            <li>30 min soundcheck</li>
+                            <li>Line check, then 2 songs to dial in mix</li>
+                        </ol>
+                    </div>
                 </div>
             </div>
         </section>
