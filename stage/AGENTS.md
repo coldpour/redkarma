@@ -32,8 +32,15 @@
 
 ## Portrait
 
-1. Production Notes must place Timing directly beneath Band Provides.
 1. The gap below the Mike/equipment row must match the standard gap.
+
+## Production Notes
+
+1. Production Notes must always read in this order: House Provides, Band Provides, then Timing.
+1. The three sections must wrap naturally without changing their reading order.
+1. At three columns, all three sections must appear on one row in reading order.
+1. At two columns, House Provides and Band Provides must occupy the first row, with Timing beginning the second row at the left beneath House Provides.
+1. At one column, House Provides, Band Provides, and Timing must stack vertically in reading order.
 
 ## Print
 
