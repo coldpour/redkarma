@@ -10,6 +10,19 @@
     --drum-pink: #f7d4d2;
     --cue-purple: #e9def0;
     --power-yellow: #fff3c7;
+    --sheet-gap: 0.75em;
+    --content-gap: 0.9em;
+    --top-panel-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+    --panel-padding-block: 0.8em;
+    --panel-padding-inline: 1.1em;
+    --table-cell-padding-block: 0.3em;
+    --table-cell-padding-inline: 0.52em;
+    --subtable-columns: minmax(0, 1.4fr) minmax(0, 0.9fr);
+    --subtable-gap: 0.75em;
+    --subtable-margin-top: 0.65em;
+    --notes-gap: 4em;
+    --notes-padding-top: 1em;
+    --performer-padding-block: 0.5em;
 }
 
 * {
@@ -33,7 +46,7 @@ body {
 .stage-sheet {
     display: flex;
     flex-direction: column;
-    gap: 0.75em;
+    gap: var(--sheet-gap);
     height: 100dvh;
     min-height: 0;
     padding: 0.65em;
@@ -58,14 +71,15 @@ body {
     flex: 1;
     grid-template-rows: auto auto;
     align-content: start;
-    gap: 0.9em;
+    gap: var(--content-gap);
     min-height: 0;
 }
 
 .top-panels {
     display: grid;
-    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
-    gap: 0.9em;
+    grid-template-columns: var(--top-panel-columns);
+    align-items: stretch;
+    gap: var(--content-gap);
     min-height: 0;
 }
 
@@ -75,7 +89,7 @@ body {
     border: 0.12em solid var(--border);
     border-radius: 0.8em;
     background: #fff;
-    padding: 0.8em 1.1em;
+    padding: var(--panel-padding-block) var(--panel-padding-inline);
 }
 
 .panel h2 {
@@ -89,7 +103,8 @@ body {
 .stage-plot {
     display: flex;
     flex-direction: column;
-    height: 100%;
+    align-self: stretch;
+    height: auto;
     padding-top: 0.25em;
     padding-bottom: 0.35em;
 }
@@ -127,6 +142,7 @@ body {
     box-shadow: inset 0 0 1.5em rgba(96, 161, 203, 0.08);
     font-size: 1.18em;
     line-height: 1.18;
+    padding-block: var(--performer-padding-block);
 }
 
 .performer strong {
@@ -198,6 +214,12 @@ body {
     left: 0.5%;
     width: 32%;
     height: 23%;
+}
+
+.holly,
+.eric,
+.andrew {
+    padding-block: calc(var(--performer-padding-block) * 1.35);
 }
 
 .eric {
@@ -317,7 +339,7 @@ body {
 .patch-list th,
 .patch-list td {
     border: 0.08em solid var(--grid-line);
-    padding: 0.3em 0.52em;
+    padding: var(--table-cell-padding-block) var(--table-cell-padding-inline);
     vertical-align: middle;
 }
 
@@ -354,9 +376,9 @@ body {
 
 .patch-subtables {
     display: grid;
-    grid-template-columns: minmax(0, 1.4fr) minmax(0, 0.9fr);
-    gap: 0.75em;
-    margin-top: 0.65em;
+    grid-template-columns: var(--subtable-columns);
+    gap: var(--subtable-gap);
+    margin-top: var(--subtable-margin-top);
 }
 
 .patch-subsection {
@@ -395,8 +417,8 @@ body {
     display: grid;
     grid-template-columns: 1fr 1fr 0.82fr;
     grid-template-areas: "house band timing";
-    gap: 4em;
-    padding-top: 1em;
+    gap: var(--notes-gap);
+    padding-top: var(--notes-padding-top);
 }
 
 .notes-column {
@@ -532,6 +554,22 @@ body {
         margin: 0.3in;
     }
 
+    :root {
+        --sheet-gap: 0.08in;
+        --content-gap: 0.08in;
+        --top-panel-columns: minmax(0, 1fr) minmax(0, 1.08fr);
+        --panel-padding-block: 0.08in;
+        --panel-padding-inline: 0.11in;
+        --table-cell-padding-block: 0.025in;
+        --table-cell-padding-inline: 0.045in;
+        --subtable-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+        --subtable-gap: 0.06in;
+        --subtable-margin-top: 0.05in;
+        --notes-gap: 0.32in;
+        --notes-padding-top: 0.08in;
+        --performer-padding-block: 0.04in;
+    }
+
     html,
     body {
         width: 100%;
@@ -552,7 +590,6 @@ body {
         width: 100%;
         height: 100vh;
         min-height: 0;
-        gap: 0.08in;
         padding: 0;
         overflow: hidden;
         break-inside: avoid;
@@ -570,19 +607,15 @@ body {
         display: grid;
         grid-template-rows: auto auto;
         align-content: start;
-        gap: 0.08in;
     }
 
     .top-panels {
         display: grid;
-        grid-template-columns: minmax(0, 1fr) minmax(0, 1.08fr);
-        gap: 0.08in;
     }
 
     .panel {
         border-width: 1pt;
         border-radius: 0.08in;
-        padding: 0.08in 0.11in;
         break-inside: avoid;
     }
 
@@ -609,17 +642,6 @@ body {
         margin-bottom: 0.04in;
     }
 
-    .patch-list th,
-    .patch-list td {
-        padding: 0.025in 0.045in;
-    }
-
-    .patch-subtables {
-        grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
-        gap: 0.06in;
-        margin-top: 0.05in;
-    }
-
     .iem-outputs th:nth-child(2) {
         padding-right: 0.025in;
         padding-left: 0.025in;
@@ -637,8 +659,6 @@ body {
     .notes-grid {
         grid-template-columns: 1fr 1fr 0.82fr;
         grid-template-areas: "house band timing";
-        gap: 0.32in;
-        padding-top: 0.08in;
     }
 
     .notes-column {
