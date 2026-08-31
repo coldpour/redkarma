@@ -83,6 +83,11 @@ body {
     min-height: 0;
 }
 
+.top-panels > .panel {
+    width: 100%;
+    max-width: 100%;
+}
+
 .panel {
     min-width: 0;
     overflow: hidden;
@@ -104,6 +109,8 @@ body {
     display: flex;
     flex-direction: column;
     align-self: stretch;
+    min-width: 0;
+    max-width: 100%;
     height: auto;
     padding-top: 0.25em;
     padding-bottom: 0.35em;
@@ -119,7 +126,11 @@ body {
 .stage-area {
     position: relative;
     flex: 1;
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
     min-height: 0;
+    overflow: hidden;
 }
 
 .performer,

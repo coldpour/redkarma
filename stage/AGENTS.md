@@ -35,3 +35,4 @@
 1. In print, allocate slightly less horizontal width to the stage plot and slightly more to the patch panel so "DESTINATION TRANSMITTER" remains fully visible across printer previews.
 1. In print, the NEAT Split/XR18 text must stay fully inside its box with visible padding and must not collide with the POWER box above it.
 1. In print, Ireland's name and equipment description must remain entirely above the microphone stand without touching or crossing it.
+1. The Stage Plot panel and every element inside it must remain contained within the Stage Plot grid column in landscape and print layouts; they must never overlap or obscure the Input & Patch List panel.
