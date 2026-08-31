@@ -17,7 +17,7 @@
 1. Mike's box must match the height of the adjacent POWER and NEAT Split/XR18 stack.
 1. Holly, Eric, and Andrew must have clear, balanced vertical padding without making their boxes unnecessarily tall.
 1. Ireland's box must communicate her full-width position without using excessive height.
-1. Ireland's label must be centered above her microphone stand with visible clearance.
+1. Ireland's label must have visible clearance above her microphone stand; in print, the label's vertical center must sit midway between the top of Ireland's box and the top of the microphone stand.
 1. Ireland's microphone stand must remain centered against the bottom of her box.
 1. Ireland's box must end approximately one standard gap above the stage-orientation line.
 1. The Stage Plot heading must use the same top inset as the other panel headings without repositioning the stage elements.

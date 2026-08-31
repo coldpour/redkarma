@@ -623,7 +623,13 @@ body {
     }
 
     .ireland-label {
-        margin-top: 0.2em;
+        position: absolute;
+        top: 34%;
+        right: 0;
+        left: 0;
+        width: 100%;
+        margin-top: 0;
+        transform: translateY(-50%);
     }
 
     .patch-list h2 {
