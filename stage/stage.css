@@ -56,7 +56,8 @@ body {
 .sheet-content {
     display: grid;
     flex: 1;
-    grid-template-rows: minmax(0, 1fr) minmax(80px, 21.5vh);
+    grid-template-rows: auto auto;
+    align-content: start;
     gap: 0.9em;
     min-height: 0;
 }
@@ -88,7 +89,16 @@ body {
 .stage-plot {
     display: flex;
     flex-direction: column;
+    height: 100%;
+    padding-top: 0.25em;
     padding-bottom: 0.35em;
+}
+
+.stage-plot h2 {
+    line-height: 0.85;
+    position: relative;
+    z-index: 3;
+    transform: translateY(0.42em);
 }
 
 .stage-area {
@@ -184,32 +194,32 @@ body {
 }
 
 .holly {
-    top: 27.8%;
+    top: 27.5%;
     left: 0.5%;
     width: 32%;
-    height: 20%;
+    height: 23%;
 }
 
 .eric {
-    top: 27.8%;
+    top: 27.5%;
     left: 34%;
     width: 32%;
-    height: 20%;
+    height: 23%;
 }
 
 .andrew {
-    top: 27.8%;
+    top: 27.5%;
     right: 0.5%;
     width: 32%;
-    height: 20%;
+    height: 23%;
 }
 
 .keys {
     z-index: 2;
-    top: 44.5%;
+    top: 47.5%;
     left: 22.9%;
     width: 20.2%;
-    height: 10.7%;
+    height: 12%;
     flex-direction: column;
     border-radius: 0.45em;
     background: #fafafa;
@@ -221,23 +231,30 @@ body {
 }
 
 .power-keys {
-    top: 49.3%;
+    top: 52.8%;
     left: 44.6%;
     width: 11.3%;
 }
 
 .ireland {
-    top: 56.7%;
+    top: 62%;
     left: 0.5%;
     width: 99%;
-    height: 37.4%;
+    height: 30%;
     justify-content: flex-start;
-    padding-top: 1.5%;
+}
+
+.ireland-label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1em;
 }
 
 .ireland-mic {
     z-index: 2;
-    top: 66.8%;
+    top: auto;
+    bottom: 8%;
     left: 50%;
     transform: translateX(-50%);
 }
@@ -432,7 +449,41 @@ body {
     }
 
     .stage-plot {
-        aspect-ratio: 1 / 1;
+        height: auto;
+        aspect-ratio: 1.45 / 1;
+    }
+
+    .mike {
+        height: 25%;
+    }
+
+    .holly,
+    .eric,
+    .andrew {
+        top: 27%;
+        height: 24.4%;
+    }
+
+    .keys {
+        top: 49.5%;
+        height: 13%;
+    }
+
+    .power-keys {
+        top: 55.5%;
+    }
+
+    .ireland {
+        top: 64.5%;
+        height: 28.5%;
+    }
+
+    .ireland-label {
+        margin-top: 1.5em;
+    }
+
+    .ireland-mic {
+        bottom: 7%;
     }
 
     .patch-list {
@@ -449,14 +500,15 @@ body {
 
     .notes-grid {
         grid-template-columns: 1fr;
-        grid-template-areas: none;
+        grid-template-areas:
+            "house"
+            "band"
+            "timing";
         gap: 1em;
     }
 
     .notes-column {
-        display: flex;
-        flex-direction: column;
-        gap: 0.9em;
+        display: contents;
     }
 
     .notes-grid h3 {
@@ -467,6 +519,9 @@ body {
 @media (orientation: portrait) and (min-width: 600px) {
     .notes-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-areas:
+            "house band"
+            ". timing";
         gap: 2em;
     }
 }
@@ -474,15 +529,123 @@ body {
 @media print {
     @page {
         size: landscape;
-        margin: 0;
+        margin: 0.3in;
+    }
+
+    html,
+    body {
+        width: 100%;
+        height: 100%;
+        min-height: 0;
     }
 
     body {
-        font-size: 10pt;
+        background: #fff;
+        font-size: 8.5pt;
+        line-height: 1.1;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
     }
 
     .stage-sheet {
-        width: 100vw;
+        display: flex;
+        width: 100%;
         height: 100vh;
+        min-height: 0;
+        gap: 0.08in;
+        padding: 0;
+        overflow: hidden;
+        break-inside: avoid;
+    }
+
+    .sheet-header {
+        padding: 0 0.02in 0.05in;
+    }
+
+    .sheet-header h1 {
+        font-size: 26pt;
+    }
+
+    .sheet-content {
+        display: grid;
+        grid-template-rows: auto auto;
+        align-content: start;
+        gap: 0.08in;
+    }
+
+    .top-panels {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1.08fr);
+        gap: 0.08in;
+    }
+
+    .panel {
+        border-width: 1pt;
+        border-radius: 0.08in;
+        padding: 0.08in 0.11in;
+        break-inside: avoid;
+    }
+
+    .stage-plot {
+        padding-bottom: 0.04in;
+    }
+
+    .splitter {
+        top: 8%;
+        padding: 0.035in;
+        font-size: 0.9em;
+        line-height: 1.12;
+    }
+
+    .splitter strong {
+        font-size: 1.08em;
+    }
+
+    .ireland-label {
+        margin-top: 0.2em;
+    }
+
+    .patch-list h2 {
+        margin-bottom: 0.04in;
+    }
+
+    .patch-list th,
+    .patch-list td {
+        padding: 0.025in 0.045in;
+    }
+
+    .patch-subtables {
+        grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+        gap: 0.06in;
+        margin-top: 0.05in;
+    }
+
+    .iem-outputs th:nth-child(2) {
+        padding-right: 0.025in;
+        padding-left: 0.025in;
+        white-space: nowrap;
+    }
+
+    .production-notes {
+        padding: 0.09in 0.13in;
+    }
+
+    .production-notes h2 {
+        padding-bottom: 0.05in;
+    }
+
+    .notes-grid {
+        grid-template-columns: 1fr 1fr 0.82fr;
+        grid-template-areas: "house band timing";
+        gap: 0.32in;
+        padding-top: 0.08in;
+    }
+
+    .notes-column {
+        display: contents;
+    }
+
+    .notes-grid h3 {
+        margin-bottom: 0.05in;
     }
 }
